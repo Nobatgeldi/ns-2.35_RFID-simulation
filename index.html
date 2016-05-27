@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Ns-2.35 rfid-simulation by Nobatgeldi</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Ns-2.35 rfid-simulation</h1>
+        <h2>RFID simulation</h2>
+        <a href="https://github.com/Nobatgeldi/ns-2.35_RFID-simulation" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>The RFID for NS-2 module was developed by Rafael Perazzo Barbosa Mota, member of the Computational Systems research group, Institute of Mathematics and Statistics (IME), University of São Paulo (USP), Brazil. This module is a free software: you can redistribute it and/or modify it under the terms of the GNU Public License Version 1 or (at your option) any later version.</p>
+
+<h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>Ns is a discrete event simulator targeted at networking research. Ns provides substantial support for simulation of TCP, routing, and multicast protocols over wired and wireless (local and satellite) networks [Text from ns-2 official page]. This project implements a RFID module based on the EPCTM Radio-Frequency Identity Protocols Class-1 Generation-2 UHF RFID Protocol for Communications at 860 MHz ? 960 MHz Version 1.2.0(25/10/2008)standard for the ns-2 simulator, release 2.35. The focus of this implementation is the Network layer and its mechanisms for anti-collision.</p>
+
+<h3>
+<a id="comparison" class="anchor" href="#comparison" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Comparison</h3>
+
+<p>Results obtained in a simulation with the module were compared with the simulation results presented in the paper:
+Namboodiri, Vinod, et al. "An extensive study of slotted Aloha-based RFID anti-collision protocols." Computer Communications (2012), Volume 35, Issue 36, 15 September 2012, pages 1955--1966.
+and can be shown bellow*
+The paper values are not exact. Until now the authors did not provide the table that generated the curve. The points were estimated by linear interpolation assuming that the points bellow are correct. (50,160) and (500,1500) 
+<img src="https://www.ime.usp.br/%7Eperazzo/identification.jpg" alt=""></p>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
+
+<p>To install the module, follow the instructions below: 
+Download the software ns-allinone-2.35 package. Unzip the ns-2 RFID module source code file inside ns-allinone-2.35 folder. Go to the ns-allinone-2.35/ns-2.35 directory and execute "./configure", "make clean" and "make". If you have root privileges execute "make install". 
+Bellow you will find a video showing the installation of the module <a href="http://www.youtube.com/watch?v=D2w6deoJTJg&amp;feature=c4-overview&amp;list=UUQhWGzqo8pIKY1Jc0U9v3Rw">http://www.youtube.com/watch?v=D2w6deoJTJg&amp;feature=c4-overview&amp;list=UUQhWGzqo8pIKY1Jc0U9v3Rw</a></p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Nobatgeldi/ns-2.35_RFID-simulation/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Nobatgeldi/ns-2.35_RFID-simulation/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Nobatgeldi/ns-2.35_RFID-simulation"></a> is maintained by <a href="https://github.com/Nobatgeldi">Nobatgeldi</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>

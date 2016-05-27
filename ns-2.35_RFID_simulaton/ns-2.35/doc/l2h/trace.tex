@@ -1,0 +1,931 @@
+\chapter{Trace and Monitoring Support}
+\label{chap:trace}
+
+The procedures and functions described in this chapter can be found in
+\textasciitilde\emph{ns}/{trace.\{cc, h\}},
+\textasciitilde\emph{ns}/{tcl/lib/ns-trace.tcl},
+\textasciitilde\emph{ns}/{queue-monitor.\{cc, h\}},
+\textasciitilde\emph{ns}/{tcl/lib/ns-link.tcl},
+\textasciitilde\emph{ns}/{packet.h},
+\textasciitilde\emph{ns}/{flowmon.cc}, and
+\textasciitilde\emph{ns}/{classifier-hash.cc}.
+
+There are a number of ways of collecting output or
+trace data on a simulation.
+Generally, trace data is either displayed directly during execution
+of the simulation, or (more commonly) stored in a file to be
+post-processed and analyzed.
+There are two primary but distinct types of monitoring capabilities
+currently supported by the simulator.
+The first, called {\em traces}, record each individual packet
+as it arrives, departs, or is dropped at a link or queue.
+Trace objects are configured into a simulation as nodes in the
+network topology, usually with a Tcl ``Channel'' object
+hooked to them, representing the destination of collected data
+(typically a trace file in the current directory).
+The other types of objects, called {\em monitors}, record counts
+of various interesting quantities such as packet and byte arrivals,
+departures, etc.
+Monitors can monitor counts associated with all packets,
+or on a per-flow basis using a 
+{\em flow monitor} below (Section~\ref{sec:flowmon}).
+
+To support traces, there is a special {\em common} header
+included in each packet (this format is defined in \textasciitilde\emph{ns}/{packet.h}
+as {\tt hdr\_cmn}).
+It presently includes a unique identifier on each packet, a
+packet type field (set by agents when they generate packets),
+a packet size field (in bytes, used to determine the transmission
+time for packets), and an interface label (used for computing
+multicast distribution trees).
+
+Monitors are supported by a separate
+set of objects that are created and inserted into the network topology
+around queues.
+They provide a place where
+arrival statistics and times are gathered and make use of the
+\clsref{Integrator}{../ns-2/integrator.h} (Section~\ref{sec:integral})
+to compute statistics over time intervals.
+
+\section{Trace Support}
+\label{sec:otcltrace}
+
+The trace support in OTcl consists of a number of specialized
+classes visible in OTcl but implemented in C++, combined
+with a set of Tcl helper procedures and classes defined in the \emph{ns}\ library.
+
+All following OTcl classes are supported by underlying C++
+classes defined in \textasciitilde\emph{ns}/{trace.cc}.
+Objects of the following types are inserted directly in-line in the
+network topology:
+
+\begin{tabularx}{\linewidth}{rX}
+Trace/Hop & trace a ``hop'' (XXX what does this mean exactly; it is not really used XXX) \\
+Trace/Enque & a packet arrival (usually at a queue) \\
+Trace/Deque & a packet departure (usually at a queue) \\
+Trace/Drop & packet drop (packet delivered to drop-target) \\
+Trace/Recv & packet receive event at the destination node of a link \\
+SnoopQueue/In & on input, collect a time/size sample (pass packet on) \\
+SnoopQueue/Out & on output, collect a time/size sample (pass packet on) \\
+SnoopQueue/Drop & on drop, collect a time/size sample (pass packet on) \\
+SnoopQueue/EDrop & on an "early" drop, collect a time/size sample (pass packet on) \\
+\end{tabularx}
+
+Objects of the following types are added in the simulation and a referenced
+by the objects listed above.  They are used to aggregate statistics collected
+by the SnoopQueue objects:
+
+\begin{tabularx}{\linewidth}{rX}
+QueueMonitor & receive and aggregate collected samples from snoopers \\
+QueueMonitor/ED & queue-monitor capable of distinguishing between ``early'' and standard packet drops \\
+QueueMonitor/ED/Flowmon & per-flow statistics monitor (manager) \\
+QueueMonitor/ED/Flow & per-flow statistics container \\
+QueueMonitor/Compat & a replacement for a standard QueueMonitor when \emph{ns}~v1 compatibility is in use \\
+\end{tabularx}
+
+\subsection{OTcl Helper Functions}
+\label{sec:helptrace}
+
+The following helper functions may be used within simulation
+scripts to help in attaching trace elements (see \textasciitilde\emph{ns}/{tcl/lib/ns-lib.tcl});
+they are instance procedures of the class Simulator:
+
+\begin{tabularx}{\linewidth}{rX}
+{\tt flush-trace \{\}} & flush buffers
+        for all trace objects in simulation \\
+{\tt create-trace \{ type file src dst \}} & create
+        a trace object of type {\em type}
+        between the given src and dest nodes.
+        If {\em file} is non-null, it is interpreted as a Tcl channel
+        and is attached to the newly-created trace object. \
+        The procedure returns the handle to the newly created trace object.\\
+{\tt trace-queue \{ n1 n2 file \}} & arrange for tracing on the link
+        between nodes {\em n1} and {\em n2}.
+        This function calls create-trace,
+        so the same rules apply with respect to the {\em file} argument. \\
+{\tt trace-callback\{ ns command \}} & arranges to call {\tt command}
+        when a line is to be traced.
+        The procedure treats {\tt command}
+        as a string and evaluates it for every line traced.
+        See \textasciitilde\emph{ns}/{tcl/ex/callback\_demo.tcl} for additional details on usage.\\
+{\tt monitor-queue \{ n1 n2 \}} & this function
+        calls the {\tt init-monitor} function
+        on the link between nodes {\em n1} and {\em n2}. \\
+{\tt drop-trace \{ n1 n2 trace \}} & the given {\em trace} object
+        is made the drop-target of the queue
+        associated with the link between nodes {\em n1} and {\em n2}.
+\end{tabularx}
+
+The \proc[]{create-trace} procedure is used to create a new {\tt Trace}
+object of the appropriate kind and attach an Tcl I/O channel to it
+(typically a file handle).
+The {\tt src\\_} and {\tt dst\\_} fields are are used by the underlying C++
+object for producing the trace output file so that trace output
+can include the node addresses defining the endpoints of the link which
+is being traced.
+Note that they are not used for {\em matching}.  Specifically, these
+values in no way relate to the packet header {\tt src} and {\tt dst}
+fields, which are also displayed when tracing.
+See the description of the {\tt Trace} class below (Section~\ref{sec:tracemoncplus}).
+
+The {\tt trace-queue} function enables
+{\tt Enque}, {\tt Deque}, and {\tt Drop} tracing on the link
+between nodes {\tt n1} and {\tt n2}.
+The Link {\tt trace} procedure is described below (Section~\ref{sec:libexam}).
+
+The {\tt monitor-queue} function is constructed similarly to
+{\tt trace-queue}.
+By calling the link's {\tt init-monitor} procedure, it arranges
+for the creation of objects ({\tt SnoopQueue} and {\tt QueueMonitor}
+objects) which can, in turn, be used to ascertain time-aggregated
+queue statistics.
+
+The {\tt drop-trace} function provides a way to specify a
+{\tt Queue}'s drop target without having a direct handle of
+the queue.
+
+\section{Library support and examples}
+\label{sec:libexam}
+
+The {\tt Simulator} procedures described above require the {\tt trace}
+and {\tt init-monitor} methods associated with the OTcl {\tt Link} class.
+Several subclasses of link are defined, the most common of which
+is called {\tt SimpleLink}.  Thus, the {\tt trace} and {\tt init-monitor}
+methods are actually part of the {\tt SimpleLink} class rather than
+the {\tt Link} base class.
+The {\tt trace} function is defined as follows (in {\tt ns-link.tcl}):
+\begin{verbatim}
+#
+# Build trace objects for this link and
+# update the object linkage
+#
+SimpleLink instproc trace { ns f } {
+        \$self instvar enqT\_ deqT\_ drpT\_ queue\_ link\_ head\_ fromNode\_ toNode\_
+        \$self instvar drophead\_
+
+        set enqT\_ [\$ns create-trace Enque \$f \$fromNode\_ \$toNode\_]
+        set deqT\_ [\$ns create-trace Deque \$f \$fromNode\_ \$toNode\_]
+        set drpT\_ [\$ns create-trace Drop \$f \$fromNode\_ \$toNode\_]
+
+        \$drpT\_ target [\$drophead\_ target]
+        \$drophead\_ target \$drpT\_
+        \$queue\_ drop-target \$drpT\_
+
+        \$deqT\_ target [\$queue\_ target]
+        \$queue\_ target \$deqT\_
+
+        if { [\$head\_ info class] == "networkinterface" } {
+            \$enqT\_ target [\$head\_ target]
+            \$head\_ target \$enqT\_
+            # puts "head is i/f"
+        } else {
+            \$enqT\_ target \$head\_
+            set head\_ \$enqT\_
+            # puts "head is not i/f"
+        }
+}
+\end{verbatim}
+This function establishes {\tt Enque}, {\tt Deque}, and {\tt Drop}
+traces in the simulator {\tt \$ns} and directs their
+output to I/O handle {\tt \$f}.
+The function assumes a queue has been associated with the link.
+It operates by first creating three new trace objects
+and inserting the {\tt Enque} object before the queue, the
+{\tt Deque} object after the queue, and the {\tt Drop} object
+between the queue and its previous drop target.
+Note that all trace output is directed to the same I/O handle.
+
+This function performs one other  additional tasks.
+It checks to see if a link contains a network interface,
+and if so, leaves it as the first object in the chain of objects
+in the link, but otherwise inserts the {\tt Enque} object as
+the first one.
+
+The following functions, {\tt init-monitor} and
+{\tt attach-monitor}, are used to create a set of
+objects used to monitor queue sizes of a queue associated
+with a link.
+They are defined as follows:
+\begin{verbatim}
+        SimpleLink instproc attach-monitors { insnoop outsnoop dropsnoop qmon } {
+                \$self instvar queue\_ head\_ snoopIn\_ snoopOut\_ snoopDrop\_
+                \$self instvar drophead\_ qMonitor\_
+
+                set snoopIn\_ \$insnoop
+                set snoopOut\_ \$outsnoop
+                set snoopDrop\_ \$dropsnoop
+
+                \$snoopIn\_ target \$head\_
+                set head\_ \$snoopIn\_
+
+                \$snoopOut\_ target [\$queue\_ target]
+                \$queue\_ target \$snoopOut\_
+
+                \$snoopDrop\_ target [\$drophead\_ target]
+                \$drophead\_ target \$snoopDrop\_
+
+                \$snoopIn\_ set-monitor \$qmon
+                \$snoopOut\_ set-monitor \$qmon
+                \$snoopDrop\_ set-monitor \$qmon
+                set qMonitor\_ \$qmon
+        }
+
+        #
+        # Insert objects that allow us to monitor the queue size
+        # of this link.  Return the name of the object that
+        # can be queried to determine the average queue size.
+        #
+        SimpleLink instproc init-monitor { ns qtrace sampleInterval} {
+                \$self instvar qMonitor\_ ns\_ qtrace\_ sampleInterval\_
+
+                set ns\_ \$ns
+                set qtrace\_ \$qtrace
+                set sampleInterval\_ \$sampleInterval
+                set qMonitor\_ [new QueueMonitor]
+
+                \$self attach-monitors [new SnoopQueue/In] \bs
+                        [new SnoopQueue/Out] [new SnoopQueue/Drop] \$qMonitor\_
+
+                set bytesInt\_ [new Integrator]
+                \$qMonitor\_ set-bytes-integrator \$bytesInt\_
+                set pktsInt\_ [new Integrator]
+                \$qMonitor\_ set-pkts-integrator \$pktsInt\_
+                return \$qMonitor\_
+        }
+\end{verbatim}
+These functions establish queue monitoring on the {\tt SimpleLink} object
+in the simulator {\tt ns}.
+Queue monitoring is implemented by constructing three {\tt SnoopQueue}
+objects and one {\tt QueueMonitor} object.
+The {\tt SnoopQueue} objects are linked in around a {\tt Queue} in a way
+similar to {\tt Trace} objects.
+The {\tt SnoopQueue/In(Out)} object monitors packet arrivals(departures)
+and reports them to an associated {\tt QueueMonitor} agent.
+In addition, a {\tt SnoopQueue/Out} object is also used to accumulate
+packet drop statistics to an associated {\tt QueueMonitor} object.
+For {\tt init-monitor} the same {\tt QueueMonitor} object is used
+in all cases.
+The C++ definitions of the {\tt SnoopQueue} and {\tt QueueMonitor}
+classes are described below.
+
+\section{The C++ Trace Class}
+\label{sec:tracemoncplus}
+
+Underlying C++ objects are created in support of the interface specified
+in Section~\ref{sec:tracemoncplus} and are linked into the network topology
+as network elements.
+The single C++ {\tt Trace} class is used to implement the OTcl
+classes {\tt Trace/Hop}, {\tt Trace/Enque}, {\tt Trace/Deque},
+and {\tt Trace/Drop}.
+The {\tt type\\_} field is used to differentiate among the
+various types of
+traces any particular {\tt Trace} object might implement.
+Currently, this field may contain one of the following symbolic characters:
+{\bf +} for enque, {\bf -} for deque, {\bf h} for hop, and
+{\bf d} for drop.
+The overall class is defined as follows in \textasciitilde\emph{ns}/{trace.cc}:
+\begin{verbatim}
+        class Trace : public Connector {
+         protected:
+                int type\_;
+                nsaddr\_t src\_;
+                nsaddr\_t dst\_;
+                Tcl\_Channel channel\_;
+                int callback\_;
+                char wrk\_[256];
+                void format(int tt, int s, int d, Packet* p);
+                void annotate(const char* s);
+                int show\_tcphdr\_;  // bool flags; backward compat
+         public:
+                Trace(int type);
+                ~Trace();
+                int command(int argc, const char*const* argv);
+                void recv(Packet* p, Handler*);
+                void dump();
+                inline char* buffer() { return (wrk\_); }
+        };
+\end{verbatim}
+The {\tt src\\_}, and {\tt dst\\_} internal state is used
+to label trace output and is independent of the corresponding field
+names in packet headers.
+The main \fcn[]{recv} method is defined as follows:
+\begin{verbatim}
+        void Trace::recv(Packet* p, Handler* h)
+        {
+                format(type\_, src\_, dst\_, p);
+                dump();
+                /* hack: if trace object not attached to anything free packet */
+                if (target\_ == 0)
+                        Packet::free(p);
+                else
+                        send(p, h); /* \fcn[]{Connector::send} */
+        }
+\end{verbatim}
+The function merely formats a trace entry using the source, destination,
+and particular trace type character.
+The {\tt dump} function writes the formatted entry out to the
+I/O handle associated with {\tt channel\\_}.
+The {\tt format} function, in effect, dictates the trace file format.
+
+\section{Trace File Format}
+\label{sec:traceformat}
+
+The \fcn[]{Trace::format} method defines the trace file format used
+in trace files produced by the {\tt Trace} class.
+It is constructed to maintain backward compatibility with output files
+in earlier versions of the simulator (\ie, \emph{ns}~v1) so that \emph{ns}~v1
+post-processing scripts continue to operate.
+The important pieces of its implementation are as follows:
+\begin{verbatim}
+        // this function should retain some backward-compatibility, so that
+        // scripts don't break.
+        void Trace::format(int tt, int s, int d, Packet* p)
+        {
+                hdr\_cmn *th = (hdr\_cmn*)p-\>access(off\_cmn\_);
+                hdr\_ip *iph = (hdr\_ip*)p-\>access(off\_ip\_);
+                hdr\_tcp *tcph = (hdr\_tcp*)p-\>access(off\_tcp\_);
+                hdr\_rtp *rh = (hdr\_rtp*)p-\>access(off\_rtp\_);
+                packet\_t t = th-\>ptype();
+                const char* name = packet\_info.name(t);
+
+                if (name == 0)
+                        abort();
+
+                int seqno;
+                /* XXX */
+                /* CBR's now have seqno's too */
+                if (t == PT\_RTP || t == PT\_CBR)
+                        seqno = rh-\>seqno();
+                else if (t == PT\_TCP || t == PT\_ACK)
+                        seqno = tcph-\>seqno();
+                else
+                        seqno = -1;
+
+                \ldots
+
+                if (!show\_tcphdr\_) {
+                        sprintf(wrk\_, "%c %g %d %d %s %d %s %d %d.%d %d.%d %d %d",
+                                tt,
+                                Scheduler::instance().clock(),
+                                s,
+                                d,
+                                name,
+                                th-\>size(),
+                                flags,
+                                iph-\>flowid() /* was p-\>class\_ */,
+                                iph-\>src() \>\> 8, iph-\>src() & 0xff,     // XXX
+                                iph-\>dst() \>\> 8, iph-\>dst() & 0xff,     // XXX
+                                seqno,
+                                th-\>uid() /* was p-\>uid\_ */);
+                } else {
+                        sprintf(wrk\_,
+                        "%c %g %d %d %s %d %s %d %d.%d %d.%d %d %d %d 0x%x %d",
+                                tt,
+                                Scheduler::instance().clock(),
+                                s,
+                                d,
+                                name,
+                                th-\>size(),
+                                flags,
+                                iph-\>flowid() /* was p-\>class\_ */,
+                                iph-\>src() \>\> 8, iph-\>src() & 0xff,     // XXX
+                                iph-\>dst() \>\> 8, iph-\>dst() & 0xff,     // XXX
+                                seqno,
+                                th-\>uid(), /* was p-\>uid\_ */
+                                tcph-\>ackno(),
+                                tcph-\>flags(),
+                                tcph-\>hlen());
+                }
+\end{verbatim}
+This function is somewhat unelegant, primarily due to the desire
+to maintain backward compatibility.
+It formats the source, destination, and type fields defined in the
+trace object ({\em not in the packet headers}), the current time,
+along with various packet header fields including,
+type of packet (as a name), size, flags (symbolically),
+flow identifier, source and destination packet header fields,
+sequence number (if present), and unique identifier.
+The {\tt show\_tcphdr\_} variable indicates whether the trace
+output should append tcp header information (ack number, flags, header length)
+at the end of each output line.
+This is especially useful for simulations using
+FullTCP agents (Section~\ref{sec:fulltcp}).
+An example of a trace file (without the tcp header fields) might
+appear as follows: 
+\begin{small}
+\begin{verbatim}
++ 1.84375 0 2 cbr 210 ------- 0 0.0 3.1 225 610
+- 1.84375 0 2 cbr 210 ------- 0 0.0 3.1 225 610
+r 1.84471 2 1 cbr 210 ------- 1 3.0 1.0 195 600
+r 1.84566 2 0 ack 40 ------- 2 3.2 0.1 82 602
++ 1.84566 0 2 tcp 1000 ------- 2 0.1 3.2 102 611
+- 1.84566 0 2 tcp 1000 ------- 2 0.1 3.2 102 611
+r 1.84609 0 2 cbr 210 ------- 0 0.0 3.1 225 610
++ 1.84609 2 3 cbr 210 ------- 0 0.0 3.1 225 610
+d 1.84609 2 3 cbr 210 ------- 0 0.0 3.1 225 610
+- 1.8461 2 3 cbr 210 ------- 0 0.0 3.1 192 511
+r 1.84612 3 2 cbr 210 ------- 1 3.0 1.0 196 603
++ 1.84612 2 1 cbr 210 ------- 1 3.0 1.0 196 603
+- 1.84612 2 1 cbr 210 ------- 1 3.0 1.0 196 603
++ 1.84625 3 2 cbr 210 ------- 1 3.0 1.0 199 612
+\end{verbatim}
+\end{small}
+Here we see 14 trace entries, five enque operations (indicated by ``+''
+in the first column), four deque operations (indicated by ``-''),
+four receive events (indicated by ``r''), and one drop event.
+(this had better be a trace fragment, or
+some packets would have just vanished!).
+The simulated time (in seconds) at which each event occurred is listed
+in the second column.
+The next two fields indicate between which two nodes tracing is happening.
+The next field is 
+a descriptive name for the the type of packet seen 
+(Section~\ref{sec:traceptype}).
+The next field is the packet's size, as encoded in its IP header.
+
+The next field contains the flags, which not used in this example.
+The flags are defined in the flags[] array in trace.cc. 
+Four of the flags are used for ECN:
+``E'' for Congestion Experienced (CE) and ``N'' for 
+ECN-Capable-Transport (ECT) indications
+in the IP header, and 
+``C'' for ECN-Echo and ``A'' for Congestion Window Reduced (CWR) 
+in the TCP header.
+For the other flags, ``P'' is for priority, and ``F'' is for TCP Fast Start.
+
+The next field gives the IP {\em flow identifier} field as defined
+for IP version 6.\footnote{In \emph{ns}~v1, each packet included a \code{class}
+field, which was used by CBQ to classify packets.
+It then found additional use to differentiate between
+``flows'' at one trace point.  In \emph{ns}~v2, the flow ID field is available
+for this purpose, but any additional information (which was commonly overloaded
+into the class field in \emph{ns}~v1) should be placed in its own separate field,
+possibly in some other header}.
+The subsequent two fields indicate the packet's source and destination
+node addresses, respectively.
+The following field indicates the sequence number.\footnote{In \emph{ns}~v1,
+all packets contained a sequence number, whereas in \emph{ns}~v2 only those
+Agents interested in providing sequencing will generate sequence numbers.
+Thus, this field may not be useful in \emph{ns}~v2 for packets generated by
+agents that have not filled in a sequence number.  It is used here
+to remain backward compatible with \emph{ns}~v1.}
+The last field is a unique packet identifier.  Each new packet
+created in the simulation is assigned a new, unique identifier.
+
+\section{Packet Types}
+\label{sec:traceptype}
+
+Each packet contains a packet type field used by {\tt Trace::format}
+to print out the type of packet encountered.
+The type field is defined in the {\tt TraceHeader} class, and is considered
+to be part of the trace support; it is not interpreted
+elsewhere in the simulator.
+Initialization of the type field in packets is performed by the
+\fcn{Agent::allocpkt} method.
+The type field is set to integer values associated with the
+definition passed to
+the {\tt Agent} constructor (Section~\ref{sec:agents:exlinkage}).
+The currently-supported definitions, their values, and their
+associated symblic names are as follows
+(defined in \textasciitilde\emph{ns}/{packet.h}):
+\begin{verbatim}
+enum packet\_t {
+	PT\_TCP,
+	PT\_UDP,
+	PT\_CBR,
+	PT\_AUDIO,
+	PT\_VIDEO,
+	PT\_ACK,
+	PT\_START,
+	PT\_STOP,
+	PT\_PRUNE,
+	PT\_GRAFT,
+	PT\_GRAFTACK,
+	PT\_JOIN,
+	PT\_ASSERT,
+	PT\_MESSAGE,
+	PT\_RTCP,
+	PT\_RTP,
+	PT\_RTPROTO\_DV,
+	PT\_CtrMcast\_Encap,
+	PT\_CtrMcast\_Decap,
+	PT\_SRM,
+	/* simple signalling messages */
+	PT\_REQUEST,	
+	PT\_ACCEPT,	
+	PT\_CONFIRM,	
+	PT\_TEARDOWN,	
+	PT\_LIVE,	// packet from live network
+	PT\_REJECT,
+
+	PT\_TELNET,	// not needed: telnet use TCP
+	PT\_FTP,
+	PT\_PARETO,
+	PT\_EXP,
+	PT\_INVAL,
+	PT\_HTTP,
+	/* new encapsulator */
+	PT\_ENCAPSULATED,
+	PT\_MFTP,
+	/* CMU/Monarch's extnsions */
+	PT\_ARP,
+	PT\_MAC,
+	PT\_TORA,
+	PT\_DSR,
+	PT\_AODV,
+	PT\_AOMDV,
+        /* DCCP */
+        PT\_DCCP,
+        ...
+        PT\_MDART,
+
+	// insert new packet types here
+
+	PT\_NTYPE // This MUST be the LAST one
+};
+\end{verbatim}
+The constructor of class {\tt p\_info} glues these constants with
+their string values:
+\begin{verbatim}
+	p\_info() {
+		name\_[PT\_TCP]= "tcp";
+		name\_[PT\_UDP]= "udp";
+		name\_[PT\_CBR]= "cbr";
+		name\_[PT\_AUDIO]= "audio";
+		...
+		name\_[PT\_NTYPE]= "undefined";
+	}
+\end{verbatim}
+See also section~\ref{sec:pinfoclass} for more details.
+
+\section{Queue Monitoring}
+\label{sec:qmonitor}
+
+Queue monitoring refers to the capability of tracking the
+dynamics of packets at a queue (or other object).
+A queue monitor tracks packet arrival/departure/drop statistics,
+and may optionally compute averages of these values.
+Monitoring may be applied to all packets (aggregate statistics), or
+per-flow statistics (using a Flow Monitor).
+
+Several classes are used in supporting queue monitoring.
+When a packet arrives at a link where queue monitoring is enabled,
+it generally passes through a {\tt SnoopQueue} object when it
+arrives and leaves (or is dropped).
+These objects contain a reference to a {\tt QueueMonitor} object.
+
+A {\tt QueueMonitor} is defined as follows (\textasciitilde\emph{ns}/{queue-monitor.cc}):
+\begin{verbatim}
+        class QueueMonitor : public TclObject {
+         public: 
+                QueueMonitor() : bytesInt\_(NULL), pktsInt\_(NULL), delaySamp\_(NULL),
+                  size\_(0), pkts\_(0),
+                  parrivals\_(0), barrivals\_(0),
+                  pdepartures\_(0), bdepartures\_(0),
+                  pdrops\_(0), bdrops\_(0),
+                  srcId\_(0), dstId\_(0), channel\_(0) {
+
+                        bind("size\_", &size\_);
+                        bind("pkts\_", &pkts\_);
+                        bind("parrivals\_", &parrivals\_);
+                        bind("barrivals\_", &barrivals\_);
+                        bind("pdepartures\_", &pdepartures\_);
+                        bind("bdepartures\_", &bdepartures\_);
+                        bind("pdrops\_", &pdrops\_);
+                        bind("bdrops\_", &bdrops\_);
+                        bind("off\_cmn\_", &off\_cmn\_);
+                };
+
+                int size() const { return (size\_); }
+                int pkts() const { return (pkts\_); }
+                int parrivals() const { return (parrivals\_); }
+                int barrivals() const { return (barrivals\_); }
+                int pdepartures() const { return (pdepartures\_); }
+                int bdepartures() const { return (bdepartures\_); }
+                int pdrops() const { return (pdrops\_); }
+                int bdrops() const { return (bdrops\_); }
+                void printStats();
+                virtual void in(Packet*);
+                virtual void out(Packet*);
+                virtual void drop(Packet*);
+                virtual void edrop(Packet*) { abort(); }; // not here
+                virtual int command(int argc, const char*const* argv);
+                \ldots
+
+        // packet arrival to a queue
+        void QueueMonitor::in(Packet* p)
+        {
+                hdr\_cmn* hdr = (hdr\_cmn*)p-\>access(off\_cmn\_);
+                double now = Scheduler::instance().clock();
+                int pktsz = hdr-\>size();
+
+                barrivals\_ += pktsz;
+                parrivals\_++;
+                size\_ += pktsz;
+                pkts\_++;
+                if (bytesInt\_)
+                        bytesInt\_-\>newPoint(now, double(size\_));
+                if (pktsInt\_)
+                        pktsInt\_-\>newPoint(now, double(pkts\_));
+                if (delaySamp\_)
+                        hdr-\>timestamp() = now;
+                if (channel\_)
+                        printStats();
+        }
+
+        \ldots \fcn[]{in}, \fcn[]{out}, \fcn[]{drop} are all defined similarly \ldots
+\end{verbatim}
+It addition to the packet and byte counters, a queue monitor
+may optionally refer to objects that keep an integral
+of the queue size over time using
+{\tt Integrator} objects, which are defined in Section~\ref{sec:integral}.
+The {\tt Integrator} class provides a simple implementation of
+integral approximation by discrete sums.
+
+All bound variables beginning with {\bf p} refer to packet counts, and
+all variables beginning with {\bf b} refer to byte counts.
+The variable {\tt size\_} records the instantaneous queue size in bytes,
+and the variable {\tt pkts\_} records the same value in packets.
+When a {\tt QueueMonitor} is configured to include the integral
+functions (on bytes or packets or both), it
+computes the approximate integral of the
+queue size (in bytes)
+with respect to time over the interval $[t_0, now]$, where
+$t_0$ is either the start of the simulation or the last time the
+{\tt sum\\_} field of the underlying {\tt Integrator} class was reset.
+
+The {\tt QueueMonitor} class is not derived from {\tt Connector}, and
+is not linked directly into the network topology.
+Rather, objects of the {\tt SnoopQueue} class (or its derived classes)
+are inserted into the network topology, and these objects contain references
+to an associated queue monitor.
+Ordinarily, multiple {\tt SnoopQueue} objects will refer to the same
+queue monitor.
+Objects constructed out of these classes are linked in the simulation
+topology as described above and call {\tt QueueMonitor}
+{\tt out}, {\tt in}, or {\tt drop} procedures,
+depending on the particular type of snoopy queue.
+
+\section{Per-Flow Monitoring}
+\label{sec:flowmon}
+
+A collection of specialized classes are used to to implement
+per-flow statistics gathering.
+These classes include: \\
+{\tt QueueMonitor/ED/Flowmon},
+{\tt QueueMonitor/ED/Flow}, and {\tt Classifier/Hash}.
+Typically, an arriving packet is inspected to determine
+to which flow it belongs.
+This inspection and flow mapping is performed by a {\em classifier}
+object (described in section~\ref{sec:flowmonitor}).
+Once the correct flow is determined, the packet is passed to
+a {\em flow monitor}, which is responsible for collecting per-flow
+state.
+Per-flow state is contained in {\em flow} objects in a one-to-one
+relationship to the flows known by the flow monitor.
+Typically, a flow monitor will create flow objects on-demand when
+packets arrive that cannot be mapped to an already-known flow.
+
+\subsection{The Flow Monitor}
+\label{sec:flowmonitor}
+
+The {\tt QueueMonitor/ED/Flowmon} class is responsible for managing
+the creation of new flow objects when packets arrive on previously
+unknown flows and for updating existing flow objects.
+Because it is a subclass of {\tt QueueMonitor}, each flow monitor
+contains an aggregate count of packet and byte arrivals, departures, and
+drops.
+Thus, it is not necessary to create a separate queue monitor to record
+aggregate statistics.
+It provides the following OTcl interface:
+\begin{quote}
+\begin{tabularx}{\linewidth}{rX}
+         classifier & get(set) classifier to map packets to flows\\
+         attach & attach a Tcl I/O channel to this monitor\\
+         dump  & dump contents of flow monitor to Tcl channel\\
+         flows & return string of flow object names known to this monitor\\
+\end{tabularx}
+\end{quote}
+
+The {\tt classifier} function sets or gets the name of the previously-allocated
+object which will perform packet-to-flow mapping for the flow monitor.
+Typically, the type of classifier used will have to do with the notion of
+``flow'' held by the user.
+One of the hash based classifiers that inspect various IP-level header
+fields is typically used here (e.g. fid, src/dst, src/dst/fid).
+Note that while classifiers usually receive packets and forward them
+on to downstream objects, the flow monitor uses the classifier only for
+its packet mapping capability, so the flow monitor acts as a passive
+monitor only and does not actively forward packets.
+
+The {\tt attach} and {\tt dump} functions are used to
+associate a Tcl I/O stream with the
+flow monitor, and dump its contents on-demand.
+The file format used by the {\tt dump} command is described below.
+
+The {\tt flows} function returns a list of the names of flows known
+by the flow monitor in a way understandable to Tcl.
+This allows tcl code to interrogate a flow monitor in order
+to obtain handles to the individual flows it maintains.
+
+\subsection{Flow Monitor Trace Format}
+\label{sec:flowmonclass}
+
+The flow monitor defines a trace format which may be used by post-processing
+scripts to determine various counts on a per-flow basis.
+The format is defined by the following code in \textasciitilde\emph{ns}/{flowmon.cc}:
+\begin{verbatim}
+void
+FlowMon::fformat(Flow* f)
+{   
+        double now = Scheduler::instance().clock();
+        sprintf(wrk\_, "%8.3f %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d 
+                now,    
+                f-\>flowid(),    // flowid
+                0,              // category
+                f-\>ptype(),     // type (from common header) 
+                f-\>flowid(),    // flowid (formerly class)
+                f-\>src(),
+                f-\>dst(),
+                f-\>parrivals(), // arrivals this flow (pkts)
+                f-\>barrivals(), // arrivals this flow (bytes) 
+                f-\>epdrops(),   // early drops this flow (pkts)
+                f-\>ebdrops(),   // early drops this flow (bytes) 
+                parrivals(),    // all arrivals (pkts)
+                barrivals(),    // all arrivals (bytes) 
+                epdrops(),      // total early drops (pkts)
+                ebdrops(),      // total early drops (bytes) 
+                pdrops(),       // total drops (pkts)
+                bdrops(),       // total drops (bytes) 
+                f-\>pdrops(),    // drops this flow (pkts) [includes edrops] 
+                f-\>bdrops()     // drops this flow (bytes) [includes edrops]
+        );
+};  
+\end{verbatim}
+Most of the fields are explained in the code comments.
+The ``category'' is historical, but is used to maintain loose backward-
+compatibility with the flow manager format in \emph{ns}~version 1.
+
+\subsection{The Flow Class}
+\label{sec:flowclass}
+
+The class {\tt QueueMonitor/ED/Flow} is used by the flow monitor
+for containing per-flow counters.
+As a subclass of {\tt QueueMonitor}, it inherits the standard
+counters for arrivals, departures, and drops, both in packets and
+bytes.
+In addition, because each flow is typically identified by
+some combination of the packet source, destination, and flow
+identifier fields, these objects contain such fields.
+Its OTcl interface contains only bound variables:
+\begin{quote}
+\begin{\par\tabular{\textwidth}{rX}}
+        {\tt src\\_} &   source address on packets for this flow\\
+        {\tt dst\\_} &   destination address on packets for this flow\\
+        {\tt flowid\\_} & flow id on packets for this flow\\
+\end{\par\tabular{\textwidth}{rX}}
+\end{quote}
+
+Note that packets may be mapped to flows (by classifiers) using
+criteria other than a src/dst/flowid triple.
+In such circumstances, only those fields actually used by
+the classifier in performing the packet-flow mapping should be
+considered reliable.
+
+
+\section{Commands at a glance}
+\label{sec:tracecommand}
+
+Following is a list of trace related commands commonly used in
+simulation scripts:
+\begin{flushleft}
+{\tt \$ns\_ trace-all \<tracefile\>}\\
+This is the command used to setup tracing in ns. All traces are written in
+the <tracefile>.
+
+
+{\tt \$ns\_ namtrace-all \<namtracefile\>}\\
+This command sets up nam tracing in ns. All nam traces are written in to
+the <namtracefile>.
+
+
+{\tt \$ns\_ namtrace-all-wireless \<namtracefile\> \<X\> \<Y\>}\\
+This command sets up wireless nam tracing. <X> and <Y> are the x-y co-ordinates
+for the wireless topology and all wireless nam traces are written  into
+the <namtracefile>.
+
+
+{\tt \$ns\_ nam-end-wireless \<stoptime\>}\\
+This tells nam the simulation stop time  given in <stoptime>.
+
+
+{\tt \$ns\_ trace-all-satlinks \<tracefile\>}\\
+This is a method to trace satellite links and write traces into <tracefile>.
+
+
+{\tt \$ns\_ flush-trace}\\
+This command flushes the trace buffer and is typically called before the
+simulation run ends.
+
+
+{\tt \$ns\_ get-nam-traceall}\\
+Returns the namtrace file descriptor stored as the Simulator instance
+variable called {\tt namtraceAllFile\_}.
+
+
+{\tt \$ns\_ get-ns-traceall}\\
+Similar to get-nam-traceall. This returns the file descriptor for ns tracefile
+which is stored as the Simulator instance called {\tt traceAllFile\_}.
+
+
+{\tt \$ns\_ create-trace \<type\> \<file\> \<src\> \<dst\> \<optional:op\>}\\
+This command creates a trace object of type <type> between the <src> and
+<dst> nodes. The traces are written into the <file>. <op> is the argument
+that may be used to specify the type of trace, like nam. if <op> is not
+defined, the default trace object created is for nstraces.
+
+
+{\tt \$ns\_ trace-queue \<n1\> \<n2\> \<optional:file\>}\\
+This is a wrapper method for {\tt create-trace}. This command creates a
+trace object for tracing events on the link represented by the nodes <n1>
+and <n2>.
+
+
+{\tt \$ns\_ namtrace-queue \<n1\> \<n2\> \<optional:file\>}\\
+This is used to create a trace object for namtracing on the link between
+nodes <n1> and <n2>. This method is very similar to and is the namtrace
+counterpart of method {\tt trace-queue}.
+
+
+{\tt \$ns\_ drop-trace \<n1\> \<n2\> \<trace\>}\\
+This command makes the given <trace> object a drop-target for the queue
+associated with the link between nodes <n1> and <n2>.
+
+
+{\tt \$ns\_ monitor-queue \<n1\> \<n2\> \<qtrace\> \<optional:sampleinterval\>}\\
+This sets up a monitor that keeps track of average queue length of the queue
+on the link between nodes <n1> and <n2>. The default value of
+sampleinterval is 0.1. 
+
+
+{\tt \$link trace-dynamics \<ns\> \<fileID\> }
+Trace the dynamics of this link and write the output to fileID filehandle.
+ns is an instance of the Simulator or MultiSim object that was created to
+invoke the simulation. 
+
+The tracefile format is backward compatible with the output files in the
+ns version 1 simulator so that ns-1 postprocessing scripts can still be
+used. Trace records of traffic for link objects with Enque, Deque, receive
+or Drop Tracing have the following form: \\
+
+<code> <time> <hsrc> <hdst> <packet> \\
+
+where 
+\begin{verbatim}
+<code> := [hd+-] h=hop d=drop +=enque -=deque r=receive <time> :=
+simulation time in seconds 
+<hsrc> := first node address of hop/queuing link 
+<hdst> := second node address of hop/queuing link 
+<packet> := <type> <size> <flags> <flowID> <src.sport> <dst.dport> <seq>
+<pktID> 
+<type> := tcp|telnet|cbr|ack etc.
+<size> := packet size in bytes
+<flags> := [CP] C=congestion, P=priority 
+<flowID> := flow identifier field as defined for IPv6 
+<src.sport> := transport address (src=node,sport=agent) 
+<dst.sport> := transport address (dst=node,dport=agent) 
+<seq> := packet sequence number
+<pktID> := unique identifer for every new packet 
+\end{verbatim}
+
+Only those agents interested in providing sequencing will generate
+sequence numbers and hence this field may not be useful for packets
+generated by some agents. For links that use RED gateways, there are
+additional trace records as follows: \\
+
+<code> <time> <value> \\
+
+where \\
+\begin{verbatim}
+<code> := [Qap] Q=queue size, a=average queue size, p=packet dropping
+probability
+<time> := simulation time in seconds 
+<value> := value 
+\end{verbatim}
+
+Trace records for link dynamics are of the form: \\
+
+<code> <time> <state> <src> <dst> \\
+
+where \\
+\begin{verbatim}
+<code> := [v]
+<time> := simulation time in seconds 
+<state> := [link-up | link-down]
+<src> := first node address of link 
+<dst> := second node address of link 
+\end{verbatim} 
+\end{flushleft}
+
+
+\endinput

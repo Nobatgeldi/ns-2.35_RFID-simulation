@@ -1,0 +1,1629 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.5.10)  6 OCT 2012 11:02
+entering extended mode
+ %&-line parsing enabled.
+**everything
+(./everything.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/floatflt/floatflt.sty
+Package: floatflt 1997/07/16 v. 1.31
+\c@OptionTest=\count88
+\figbox=\box26
+\tabbox=\box27
+\pagebox=\box28
+\ffigcount=\count89
+\ftabcount=\count90
+\fftest=\count91
+\hangcount=\count92
+\nosuccesstryfig=\count93
+\nosuccesstrytab=\count94
+\figgutter=\dimen103
+\tabgutter=\dimen104
+\htdone=\dimen105
+\pageht=\dimen106
+\startpageht=\dimen107
+\tabbredd=\dimen108
+\floatfltwidth=\dimen109
+\fltitemwidth=\dimen110
+\outputpretest=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+) (./nsdoc.sty
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+) (./html.sty
+Package: html 1996/02/01 v1.0 hypertext commands for latex2html (nd, hws)
+\c@lpart=\count95
+\c@lchapter=\count96
+\c@lsection=\count97
+\c@lsubsection=\count98
+\c@lsubsubsection=\count99
+\c@lparagraph=\count100
+\c@lsubparagraph=\count101
+\c@lsubsubparagraph=\count102
+\c@lequation=\count103
+\ptrfile=\write3
+)
+(/usr/share/texmf-texlive/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen111
+\extrarowheight=\dimen112
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen113
+\TX@old@table=\dimen114
+\TX@old@col=\dimen115
+\TX@target=\dimen116
+\TX@delta=\dimen117
+\TX@cols=\count104
+\TX@ftn=\toks16
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen118
+\Gin@req@width=\dimen119
+) resize completed
+(/usr/share/texmf-texlive/tex/latex/pstricks/pstricks.sty
+Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.tex
+`PSTricks' v1.29  <2009/05/19> (tvz)
+\pst@dima=\dimen120
+\pst@dimb=\dimen121
+\pst@dimc=\dimen122
+\pst@dimd=\dimen123
+\pst@dimg=\dimen124
+\pst@dimh=\dimen125
+\pst@hbox=\box29
+\pst@boxg=\box30
+\pst@cnta=\count105
+\pst@cntb=\count106
+\pst@cntc=\count107
+\pst@cntd=\count108
+\pst@cntg=\count109
+\pst@cnth=\count110
+\pst@toks=\toks18
+(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen126
+\psxunit=\dimen127
+\psyunit=\dimen128
+\pslinewidth=\dimen129
+\pst@customdefs=\toks19
+\pslinearc=\dimen130
+\everypsbox=\toks20
+\psframesep=\dimen131
+\pslabelsep=\dimen132
+\pst@shift=\dimen133
+\theoverlaybox=\box31
+)
+File: pstricks.tex 2009/05/19 v1.29 `PSTricks' (tvz,hv)
+
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/share/texmf-texlive/tex/latex/pstricks/pst-node.sty
+Package: pst-node 2006/01/01 package wrapper for pst-node.tex
+
+(/usr/share/texmf-texlive/tex/generic/pstricks/pst-node.tex  v1.01, 2008/11/26
+\psrow=\count111
+\pscol=\count112
+\psmatrixcnt=\count113
+\psrowsep=\skip45
+\pscolsep=\skip46
+)
+File: pst-node.tex 2008/11/26 1.01 `pst-node' (tvz)
+) (/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip47
+\LTright=\skip48
+\LTpre=\skip49
+\LTpost=\skip50
+\LTchunksize=\count114
+\LTcapwidth=\dimen134
+\LT@head=\box32
+\LT@firsthead=\box33
+\LT@foot=\box34
+\LT@lastfoot=\box35
+\LT@cols=\count115
+\LT@rows=\count116
+\c@LT@tables=\count117
+\c@LT@chunks=\count118
+\LT@p@ftn=\toks21
+))
+\@indexfile=\write4
+\openout4 = `everything.idx'.
+
+
+Writing index file everything.idx
+(./everything.aux (./basic.aux) (./undocumented.aux) (./otcl.aux) (./sim.aux)
+(./nodes.aux) (./links.aux) (./queue_mgmt.aux) (./delays.aux) (./diffserv.aux)
+(./agents.aux) (./timers.aux) (./events.aux) (./packet_format.aux)
+(./error_model.aux) (./lan.aux) (./address.aux) (./mobility.aux)
+(./satellite.aux) (./propagation.aux) (./energymodel.aux) (./diffusion.aux)
+(./xcp.aux) (./delaybox.aux) (./wpan.aux) (./debug.aux) (./math.aux)
+(./trace.aux) (./testsuite.aux) (./dynlib.aux) (./codestyle.aux) (./unicast.aux
+) (./multicast.aux) (./dynamics.aux) (./hier-rtg.aux) (./udp.aux) (./tcp.aux)
+(./sctp.aux) (./srm.aux) (./plm.aux) (./dccp.aux) (./applications.aux)
+(./webcache.aux) (./worm-model.aux) (./packmime.aux) (./tmix.aux)
+(./session.aux) (./asim.aux) (./emulation.aux) (./nam.aux) (./namtrace.aux)
+(./educational.aux))
+\openout1 = `everything.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 21.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 30.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 39.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 40.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 56.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (52.09874pt too wide) in paragraph at lines 52--58
+[]\T1/ptm/m/n/9 Ns doc-u-men-ta-tion is avail-able in html, Postscript, and PDF
+ for-mats. See $\T1/pcr/m/n/9 http : / / www . isi . edu / nsnam / ns / ns-[]do
+cumentation .
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 69.
+[1
+
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 74.
+ (./everything.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 3.
+ [1
+
+
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 91.
+ [2] [3] [4] [5] [6] [7] [8] [9] [10])
+\tf@toc=\write5
+\openout5 = `everything.toc'.
+
+ [11]
+\openout2 = `basic.aux'.
+
+
+(./basic.tex
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 4.
+[12
+
+
+] [13
+
+] [14]) [15
+
+]
+\openout2 = `undocumented.aux'.
+
+ (./undocumented.tex
+Chapter 2.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+[16
+
+
+
+]) [17] [18
+
+
+]
+\openout2 = `otcl.aux'.
+
+ (./otcl.tex
+Chapter 3.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+[19
+
+
+] [20]
+Overfull \hbox (6.2832pt too wide) in paragraph at lines 232--237
+[]\T1/pcr/m/n/10 tcl.eval\T1/ptm/m/n/10 () as-sumes that the com-mand is al-rea
+dy stored in the class' in-ter-nal \T1/pcr/m/n/10 bp_\T1/ptm/m/n/10 ; it di-rec
+tly in-vokes \T1/pcr/m/n/10 tcl.eval\T1/ptm/m/n/10 (char*
+ []
+
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 245.
+[21] [22] [23] [24] [25] [26] [27]
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <12> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 796.
+ [28] [29] [30]
+Overfull \hbox (5.13495pt too wide) in paragraph at lines 1040--1048
+\T1/ptm/m/n/10 num-ber of ar-gu-ments passed to \T1/pcr/m/n/10 TclClass::method
+\T1/ptm/m/n/10 () are dif-fer-ent from those passed to \T1/pcr/m/n/10 TclObject
+::command\T1/ptm/m/n/10 ().
+ []
+
+[31] [32] [33] [34]
+Overfull \hbox (6.58559pt too wide) in paragraph at lines 1324--1332
+[]\T1/ptm/m/n/10 There are five in-stance vari-able classes: \T1/pcr/m/n/10 cla
+ss InstVarReal\T1/ptm/m/n/10 , \T1/pcr/m/n/10 class InstVarTime\T1/ptm/m/n/10 ,
+ \T1/pcr/m/n/10 class InstVarBandwidth\T1/ptm/m/n/10 ,
+ []
+
+[35]) [36] [37
+
+
+]
+\openout2 = `sim.aux'.
+
+ (./sim.tex
+Chapter 4.
+[38
+
+
+]
+Overfull \hbox (8.44289pt too wide) in paragraph at lines 68--70
+[]\T1/ptm/m/n/10 An \T1/ptm/m/it/10 event \T1/ptm/m/n/10 gen-er-ally com-prises
+ a ``fir-ing time'' and a han-dler func-tion. The ac-tual def-i-ni-tion of an e
+vent is found in ~\T1/ptm/m/it/10 ns\T1/ptm/m/n/10 /scheduler.h: 
+ []
+
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 82.
+[39] [40] [41] [42
+
+] [43]) [44]
+\openout2 = `nodes.aux'.
+
+ (./nodes.tex
+Chapter 5.
+
+Overfull \hbox (22.79967pt too wide) in paragraph at lines 32--38
+\T1/ptm/m/n/10 ~\T1/ptm/m/it/10 ns\T1/ptm/m/n/10 /tcl/lib/ns-rtmodule.tcl, ~\T1
+/ptm/m/it/10 ns\T1/ptm/m/n/10 /rtmodule.{cc,h}, ~\T1/ptm/m/it/10 ns\T1/ptm/m/n/
+10 /classifier.{cc, h}, ~\T1/ptm/m/it/10 ns\T1/ptm/m/n/10 /classifier-addr.cc, 
+~\T1/ptm/m/it/10 ns\T1/ptm/m/n/10 /classifier-mcast.cc, ~\T1/ptm/m/it/10 ns\T1/
+ptm/m/n/10 /classifier-
+ []
+
+File: ./figures/node.eps Graphic file (type eps)
+<./figures/node.eps> [45
+
+
+
+]
+File: ./figures/mcastNode.eps Graphic file (type eps)
+ <./figures/mcastNode.eps> [46] [47] [48]
+Overfull \hbox (11.79999pt too wide) in paragraph at lines 252--253
+[] 
+ []
+
+[49]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 358.
+ [50] [51]
+Overfull \hbox (23.33745pt too wide) in paragraph at lines 497--497
+[]                                \T1/pcr/m/n/10 NsObject* node = (NsObject*)Tc
+lObject::lookup(argv[2]);[] 
+ []
+
+
+Overfull \hbox (17.33745pt too wide) in paragraph at lines 508--508
+[]                                \T1/pcr/m/n/10 tcl.resultf("Classifier: no ob
+ject at slot %d", slot);[] 
+ []
+
+[52]
+Overfull \hbox (23.33745pt too wide) in paragraph at lines 517--517
+[]                                \T1/pcr/m/n/10 NsObject* node = (NsObject*)Tc
+lObject::lookup(argv[3]);[] 
+ []
+
+[53] [54]
+Overfull \hbox (17.33745pt too wide) in paragraph at lines 656--656
+[]                        \T1/pcr/m/n/10 Tcl::instance().evalf("%s new-group %u
+ %u", name(), src, dst);[] 
+ []
+
+[55]
+LaTeX Font Info:    Try loading font information for T1+phv on input line 725.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+) [56] [57]
+File: ./figures/rtmodule.eps Graphic file (type eps)
+
+<./figures/rtmodule.eps> [58] [59]
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1048--1048
+[][] 
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1064--1064
+[][] 
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1073--1073
+[][] 
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1081--1081
+[][] 
+ []
+
+[60] [61]) [62]
+\openout2 = `links.aux'.
+
+ (./links.tex
+Chapter 6.
+File: ./figures/link.eps Graphic file (type eps)
+<./figures/link.eps> [63
+
+
+
+] [64] [65] [66] [67] [68]) [69]
+\openout2 = `queue_mgmt.aux'.
+
+ (./queue_mgmt.tex
+Chapter 7.
+[70
+
+
+
+] [71] [72] [73] [74] [75] [76] [77] (./jobs.tex [78] [79] [80] [81]
+[82] [83])) [84]
+\openout2 = `delays.aux'.
+
+ (./delays.tex
+Chapter 8.
+[85
+
+
+
+]) [86]
+\openout2 = `diffserv.aux'.
+
+ (./diffserv.tex
+Chapter 9.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24.88> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 7.
+[87
+
+
+
+] [88] [89] [90] [91] [92] [93]) [94]
+\openout2 = `agents.aux'.
+
+ (./agents.tex [95
+
+
+]
+Chapter 10.
+[96
+
+] [97] [98] [99] [100] [101] [102] [103] [104]
+Overfull \hbox (1.06465pt too wide) in paragraph at lines 605--619
+[]\T1/ptm/m/n/10 Here, the C++ vari-ables \T1/pcr/m/n/10 interval_ \T1/ptm/m/n/
+10 and \T1/pcr/m/n/10 size_ \T1/ptm/m/n/10 are linked to the OTcl in-stance var
+i-ables \T1/pcr/m/n/10 interval_ \T1/ptm/m/n/10 and \T1/pcr/m/n/10 packetSize_\
+T1/ptm/m/n/10 ,
+ []
+
+[105] [106] [107] [108] [109]) [110]
+\openout2 = `timers.aux'.
+
+ (./timers.tex
+Chapter 11.
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]|\T1/ptm/m/n/10 returns timer sta-tus (ei-ther TIMER_IDLE, TIMER_PENDING, or
+ []
+
+[111
+
+
+
+] [112] [113]
+Overfull \hbox (11.2343pt too wide) in paragraph at lines 188--194
+[]\T1/ptm/m/n/10 In the above code, the \T1/pcr/m/n/10 set_rtx_timer\T1/ptm/m/n
+/10 () method resched-ules the re-trans-mis-sion timer by call-ing \T1/pcr/m/n/
+10 rtx_timer_.resched\T1/ptm/m/n/10 ().
+ []
+
+
+Overfull \hbox (5.07422pt too wide) in paragraph at lines 195--200
+[]\T1/ptm/m/n/10 Finally, the \T1/pcr/m/n/10 expire\T1/ptm/m/n/10 (void) method
+ for class \T1/pcr/m/n/10 RtxTimer \T1/ptm/m/n/10 must be de-fined. In this cas
+e, \T1/pcr/m/n/10 expire\T1/ptm/m/n/10 (void) calls the \T1/pcr/m/n/10 timeout\
+T1/ptm/m/n/10 (void)
+ []
+
+[114]) [115]
+\openout2 = `events.aux'.
+
+
+No file events.tex.
+\openout2 = `packet_format.aux'.
+
+(./packet_format.tex
+Chapter 12.
+[116
+
+
+
+
+
+] [117] [118]
+Overfull \hbox (19.3639pt too wide) in paragraph at lines 254--272
+\T1/ptm/m/n/10 There are four C++ classes rel-e-vant to the han-dling of pack-e
+ts and packet head-ers in gen-eral: \T1/pcr/m/n/10 Packet\T1/ptm/m/n/10 , \T1/p
+cr/m/n/10 p_info PacketHeader\T1/ptm/m/n/10 ,
+ []
+
+File: ./figures/packet.eps Graphic file (type eps)
+<./figures/packet.eps> [119] [120] [121] [122] [123] [124]) [125]
+\openout2 = `error_model.aux'.
+
+
+(./error_model.tex
+Chapter 13.
+[126
+
+
+
+]
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 137--137
+[][] 
+ []
+
+[127]
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
+[]|\T1/ptm/m/n/10 This method's be-hav-ior is iden-ti-cal to that of
+ []
+
+
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 152--152
+[][] 
+ []
+
+[128] [129]) [130]
+\openout2 = `lan.aux'.
+
+ (./lan.tex
+Chapter 14.
+[131
+
+
+
+]
+File: ./figures/lan1.eps Graphic file (type eps)
+ <./figures/lan1.eps> [132] [133] [134] [135]
+Overfull \hbox (67.64418pt too wide) in paragraph at lines 348--354
+\T1/ptm/m/n/10 the chan-nel sig-nals the end of con-tention pe-riod, the \T1/pc
+r/m/n/10 endofContention \T1/ptm/m/n/10 method checks for col-li-sion us-ing th
+e \T1/pcr/m/n/10 Channel::collision()
+ []
+
+[136] [137]
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 430.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 472.
+File: ./figures/lan2.eps Graphic file (type eps)
+ <./figures/lan2.eps> [138] [139]) [140]
+\openout2 = `address.aux'.
+
+ (./address.tex
+Chapter 15.
+[141
+
+
+
+] [142]) [143]
+\openout2 = `mobility.aux'.
+
+ (./mobility.tex
+Chapter 16.
+
+Overfull \hbox (36.3991pt too wide) in paragraph at lines 53--69
+\T1/ptm/m/n/10 ~\T1/ptm/m/it/10 ns\T1/ptm/m/n/10 /tcl/mobility/dsr.tcl, ~\T1/pt
+m/m/it/10 ns\T1/ptm/m/n/10 /tcl/mobility/tora.tcl. Ex-am-ple scripts can be fou
+nd in ~\T1/ptm/m/it/10 ns\T1/ptm/m/n/10 /tcl/ex/wireless-test.tcl and ~\T1/ptm/
+m/it/10 ns\T1/ptm/m/n/10 /tcl/ex/wireless.tcl.
+ []
+
+[144
+
+
+
+]
+File: ./figures/dsdv.eps Graphic file (type eps)
+ <./figures/dsdv.eps> [145]
+File: ./figures/dsr.eps Graphic file (type eps)
+ <./figures/dsr.eps> [146] [147] [148] [149]
+[150] [151]
+Overfull \hbox (15.56848pt too wide) in paragraph at lines 418--423
+\T1/ptm/m/n/10 ($\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =r[]$\T1/ptm/m/n/10 ) at far
+ dis-tances. The ap-prox-i-ma-tion as-sumes spec-u-lar re-flec-tion off a flat 
+ground plane. See ~\T1/ptm/m/it/10 ns\T1/ptm/m/n/10 /tworayground.{cc,h}
+ []
+
+[152]
+Overfull \hbox (35.81413pt too wide) in paragraph at lines 470--476
+[]\T1/ptm/m/n/10 To avoid un-nec-es-sary power con-sump-tion, each node turns i
+ts ra-dio on and off ex-plic-itly by in-vok-ing node API \T1/pcr/m/n/10 set_nod
+e_sleep()\T1/ptm/m/n/10 .
+ []
+
+
+Overfull \hbox (18.09369pt too wide) in paragraph at lines 488--493
+[]\T1/ptm/m/n/10 The fol-low-ing pa-ram-e-ters are user con-fig-urable: the wir
+e-less link band-width \T1/pcr/m/n/10 bandwith_\T1/ptm/m/n/10 , the slot length
+ \T1/pcr/m/n/10 packet_slot_len_\T1/ptm/m/n/10 ,
+ []
+
+[153] [154] [155] [156] [157]
+Overfull \hbox (11.33745pt too wide) in paragraph at lines 835--835
+[]                \T1/pcr/m/n/10 (ch->next_hop_ < 0) ? 0 : ch->next_hop_); // n
+ext hopaddress, if any.[] 
+ []
+
+[158]
+Overfull \hbox (30.56445pt too wide) in paragraph at lines 875--881
+[]\T1/ptm/m/n/10 This com-mand should be called be-fore the uni-ver-sal trace c
+om-mand \T1/pcr/m/n/10 $ns trace-all <trace-fd>\T1/ptm/m/n/10 . Prim-i-tive \T1
+/pcr/m/n/10 use-newtrace
+ []
+
+
+Overfull \hbox (17.33745pt too wide) in paragraph at lines 891--891
+[]\T1/pcr/m/n/10 -1.000000 -Nl AGT -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 0.0 -Id 
+1.0 -It tcp -Il 1000 -If[] 
+ []
+
+
+Overfull \hbox (17.33745pt too wide) in paragraph at lines 894--894
+[]\T1/pcr/m/n/10 -1.000000 -Nl RTR -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 0.0 -Id 
+1.0 -It tcp -Il 1000 -If[] 
+ []
+
+[159] [160] [161] [162]
+File: ./figures/basestation.eps Graphic file (type eps)
+ <./figures/basestation.eps>
+Overfull \hbox (13.88277pt too wide) in paragraph at lines 1158--1168
+[]\T1/ptm/m/n/10 The mo-bilen-odes in wired-cum-wireless sce-nario are re-quire
+d to sup-port hi-er-ar-chi-cal ad-dress-ing/routing. Thus the \T1/pcr/m/n/10 Mo
+bileNode
+ []
+
+File: ./figures/wireless-mip.eps Graphic file (type eps)
+<./figures/wireless-mip.eps> [163] [164] [165] [166]
+Overfull \hbox (42.45215pt too wide) in paragraph at lines 1336--1337
+[]\T1/ptm/b/n/10 Example scripts: \T1/ptm/m/n/10 tcl/ex/802.11/ di-rec-tory: IE
+EE802-11a.tcl IEEE802-11p.tcl broad-cast_validation.tcl uni-cast_validation.tcl
+ 
+ []
+
+
+Overfull \hbox (43.47238pt too wide) in paragraph at lines 1340--1349
+\T1/ptm/m/n/10 only (see the top-level dei80211mr di-rec-tory in the ns-allinon
+e dis-tri-bu-tion or see http://www.dei.unipd.it/wdyn/?IDsezione=5091).
+ []
+
+
+Overfull \hbox (93.58008pt too wide) in paragraph at lines 1372--1377
+[]\T1/ptm/m/n/10 In ad-di-tion, a patch (re-lat-ing to the CMU im-ple-men-ta-ti
+on) im-prov-ing ns-2 802.11 wire-less sup-port is avail-able at http://www.tele
+matica.polito.it/fiore/.
+ []
+
+[167] [168] [169] [170]) [171]
+\openout2 = `satellite.aux'.
+
+ (./satellite.tex
+Chapter 17.
+[172
+
+
+
+]
+File: ./figures/sat-constellation.eps Graphic file (type eps)
+ <./figures/sat-constellation.eps> [173] [174]
+File: ./figures/sat-spherical.eps Graphic file (type eps)
+
+<./figures/sat-spherical.eps> [175
+
+]
+File: ./figures/sat-stack-basic.eps Graphic file (type eps)
+ <./figures/sat-stack-basic.eps> [176]
+[177] [178] [179] [180] [181]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 708.
+ [182]
+Overfull \hbox (64.54424pt too wide) in paragraph at lines 807--811
+\T1/ptm/m/n/10 288 satel-lite Teledesic con-stel-la-tion (with sup-port-ing scr
+ipts \T1/pcr/m/n/10 sat-teledesic-links.tcl \T1/ptm/m/n/10 and \T1/pcr/m/n/10 s
+at-teledesic-nodes.tcl\T1/ptm/m/n/10 ). 
+ []
+
+File: ./figures/linked-list.eps Graphic file (type eps)
+<./figures/linked-list.eps> [183]
+Overfull \hbox (1.80319pt too wide) in paragraph at lines 860--868
+[]\T1/ptm/m/n/10 Figure 17.4[] pro-vides a schematic of how the linked list is 
+or-ga-nized. Each ob-ject in the list is linked through a ``LINK_ENTRY''
+ []
+
+File: ./figures/sat-node.eps Graphic file (type eps)
+<./figures/sat-node.eps>
+Overfull \hbox (19.9432pt too wide) in paragraph at lines 898--909
+[]\T1/ptm/m/n/10 The base class rout-ing agent is \T1/pcr/m/n/10 class SatRoute
+Agent\T1/ptm/m/n/10 ; it can be used in con-junc-tion with cen-tral-ized rout-i
+ng. SatRouteAgents
+ []
+
+
+Overfull \hbox (11.6032pt too wide) in paragraph at lines 898--909
+\T1/ptm/m/n/10 con-tain a for-ward-ing ta-ble that re-solves a packet's ad-dres
+s to a par-tic-u-lar LinkHead target-- it is the job of the \T1/pcr/m/n/10 SatR
+outeObject
+ []
+
+[184]
+File: ./figures/sat-stack.eps Graphic file (type eps)
+ <./figures/sat-stack.eps> [185] [186] [187]) [188]
+\openout2 = `propagation.aux'.
+
+ (./propagation.tex
+Chapter 18.
+[189
+
+
+
+] [190]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 146.
+ [191] [192]) [193]
+\openout2 = `energymodel.aux'.
+
+ (./energymodel.tex
+Chapter 19.
+[194
+
+
+
+] [195])
+\openout2 = `diffusion.aux'.
+
+ (./diffusion.tex
+Chapter 20.
+[196
+
+
+
+
+]
+File: ./figures/filter.eps Graphic file (type eps)
+ <./figures/filter.eps>
+Overfull \hbox (39.39157pt too wide) in paragraph at lines 58--59
+\T1/ptm/m/n/10 default.tcl. Dif-fu-sion ap-pli-ca-tions at-tached to the node c
+all the un-der-ly-ing dif-fu-sion ap-pli-ca-tion agent for pub-lish-ing/subscri
+bing/sending
+ []
+
+[197] [198]
+Overfull \hbox (365.33745pt too wide) in paragraph at lines 99--102
+[]\T1/pcr/m/n/10 $ns_ node-config -adhocRouting $opt(adhocRouting)             
+      -llType $opt(ll)                   -macType $opt(mac)                   .
+...[] 
+ []
+
+
+Overfull \hbox (371.33745pt too wide) in paragraph at lines 103--106
+[]                 \T1/pcr/m/n/10 -diffusionFilter $opt(filters)               
+    -stopTime $opt(prestop)                   -agentTrace ON                   
+....[] 
+ []
+
+[199] [200]
+Overfull \hbox (803.33745pt too wide) in paragraph at lines 232--232
+[]\T1/pcr/m/n/10 value of opt(filters) can be a list of filters that is require
+d to be attached to diffusion nodes each separated by a forward-slash like Grad
+ientFilter/GeoRoutingFilter/TagFilter or maybe GradientFilter/TagFilter etc.[] 
+
+ []
+
+
+Overfull \hbox (149.33745pt too wide) in paragraph at lines 235--235
+[]\T1/pcr/m/n/10 value of opt(pre-stop) is usually the time simulation stops wh
+en all statistical data is dumped into a file.[] 
+ []
+
+[201]
+Overfull \hbox (131.33745pt too wide) in paragraph at lines 236--236
+[]\T1/pcr/m/n/10 This command allows dumping of statistical data into an output
+ file after running a diffusion simulation.[] 
+ []
+
+) [202]
+\openout2 = `xcp.aux'.
+
+ (./xcp.tex
+Chapter 21.
+
+LaTeX Warning: Citation `Katabi02' on page 203 undefined on input line 14.
+
+[203
+
+
+
+] [204] [205] [206] [207] [208]) [209]
+\openout2 = `delaybox.aux'.
+
+ (./delaybox.tex
+Chapter 22.
+[210
+
+
+
+]
+Overfull \hbox (84.41408pt too wide) in paragraph at lines 85--89
+\T1/ptm/m/n/10 More ex-am-ples are avail-able in the \T1/pcr/m/n/10 tcl/ex/dela
+ybox/ \T1/ptm/m/n/10 di-rec-tory of the ns source code. The val-i-da-tion scrip
+t \T1/pcr/m/n/10 test-suite-delaybox.tcl
+ []
+
+[211] [212]) [213]
+\openout2 = `wpan.aux'.
+
+ (./wpan.tex
+Chapter 23.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+
+Overfull \hbox (13.72421pt too wide) in paragraph at lines 25--31
+\T1/ptm/m/n/10 Files changed: ./wpan/p802_15_4mac.cc, ./wpan/p802_15_4mac.h, ./
+wpan/p802_15_4timer.cc, ./wpan/p802_15_4timer.h,
+ []
+
+[214
+
+
+
+]
+Overfull \hbox (17.3639pt too wide) in paragraph at lines 46--51
+\T1/ptm/m/n/10 dio shut-down has been ac-ti-vated. This is done by [] by call-i
+ng []. 
+ []
+
+
+Overfull \hbox (152.99062pt too wide) in paragraph at lines 52--56
+[]\T1/ptm/m/n/10 . The back-off time for the first back-off stage is cal-cu-lat
+ed as []. 
+ []
+
+) [215] [216
+
+
+]
+\openout2 = `debug.aux'.
+
+ (./debug.tex
+Chapter 24.
+[217
+
+
+] [218]
+Overfull \hbox (3.84097pt too wide) in paragraph at lines 123--132
+\T1/ptm/m/n/10 doc-u-men-ta-tion at http://www.letters.com/dmalloc/ and get the
+ source code from ftp://ftp.letters.com/src/dmalloc/dmalloc.tar.gz
+ []
+
+
+Overfull \hbox (9.33623pt too wide) in paragraph at lines 147--149
+[]\T1/ptm/m/n/10 Interpret log-file by run-ning \T1/pcr/m/n/10 dmalloc_summariz
+e ns <logfile\T1/ptm/m/n/10 . (You need to down-load \T1/pcr/m/n/10 dmalloc_sum
+marize
+ []
+
+[219]
+Overfull \hbox (12.72655pt too wide) in paragraph at lines 198--204
+\T1/pcr/m/n/10 [new CtrMcast $ns $n(1) $ctrmcastcomp [list 1 1]] \T1/ptm/m/n/10
+ would be bet-ter if re-placed by \T1/pcr/m/n/10 new CtrMcast
+ []
+
+[220]) [221]
+\openout2 = `math.aux'.
+
+ (./math.tex
+Chapter 25.
+File: ./figures/rng-streams.eps Graphic file (type eps)
+<./figures/rng-streams.eps> [222
+
+
+
+] [223] [224] [225] [226] [227] [228] [229]
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+[230]) [231]
+\openout2 = `trace.aux'.
+
+ (./trace.tex
+Chapter 26.
+[232
+
+
+
+] [233] [234] [235] [236] [237] [238] [239] [240] [241] [242]
+Overfull \hbox (50.00006pt too wide) in paragraph at lines 800--800
+[][] 
+ []
+
+[243] [244]) [245]
+\openout2 = `testsuite.aux'.
+
+ (./testsuite.tex
+Chapter 27.
+[246
+
+
+
+] [247]) [248]
+\openout2 = `dynlib.aux'.
+
+ (./dynlib.tex
+Chapter 28.
+
+Overfull \hbox (131.77098pt too wide) in paragraph at lines 37--40
+[]\T1/ptm/m/n/10 The be-low sec-tions briefly sum-ma-rize the more com-plete do
+c-u-men-ta-tion that can be found at: http://www.dei.unipd.it/%7Ebaldo/ns_dl_pa
+tch/ns_dl_patch.html 
+ []
+
+[249
+
+
+
+]
+Overfull \hbox (58.7929pt too wide) in paragraph at lines 54--57
+[]\T1/ptm/m/n/10 If you are us-ing an older ver-sion of ns-2, one of the be-low
+ patches may work: http://www.dei.unipd.it/%7Ebaldo/ns_dl_patch/Download.html 
+ []
+
+) [250]
+\openout2 = `codestyle.aux'.
+
+ (./codestyle.tex
+Chapter 29.
+[251
+
+
+
+]) [252] [253
+
+
+]
+\openout2 = `unicast.aux'.
+
+ (./unicast.tex
+Chapter 30.
+[254
+
+
+] [255]
+File: ./figures/asymmetric_routing.eps Graphic file (type eps)
+ <./figures/asymmetric_routing.eps> [256] [257]
+Overfull \hbox (9.925pt too wide) in paragraph at lines 335--338
+[]\T1/ptm/m/n/10 If there are no el-e-ments in \T1/pcr/m/n/10 rtprotos_\T1/ptm/
+m/n/10 , the rou-tine in-vokes Static rout-ing, as \T1/pcr/m/n/10 Agent/rtProto
+/Static init-all\T1/ptm/m/n/10 . 
+ []
+
+
+Overfull \hbox (0.50368pt too wide) in paragraph at lines 350--356
+[]\T1/ptm/m/n/10 Note that this pro-ce-dure over-loads an instproc-like of the 
+same name. The pro-ce-dure queries the ap-pro-pri-ate \T1/pcr/m/n/10 rtObject
+ []
+
+[258] [259] [260]
+Overfull \hbox (4.37482pt too wide) in paragraph at lines 711--724
+\T1/ptm/m/n/10 the route changes at the node, in-di-cat-ing the num-ber of chan
+ges that have been ex-e-cuted. \T1/pcr/m/n/10 rtObject::flag-multicast\T1/ptm/m
+/n/10 {}
+ []
+
+[261] [262] [263]) [264]
+\openout2 = `multicast.aux'.
+
+ (./multicast.tex
+Chapter 31.
+[265
+
+
+
+] [266] [267] [268] [269]
+Underfull \hbox (badness 2012) in paragraph at lines 433--433
+[]|\T1/ptm/m/n/10 Class pro-ce-dures for ad-dress man-age-ment. \T1/pcr/m/n/10 
+expandaddr\T1/ptm/m/n/10 {} is now ob-so-leted.
+ []
+
+[270] [271] [272] [273]
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
+[]|\T1/ptm/m/n/10 depending on the value of \T1/pcr/m/n/10 CacheMissMode
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
+\T1/ptm/m/n/10 calls ei-ther \T1/pcr/m/n/10 handle-cache-miss-pimdm \T1/ptm/m/n
+/10 or
+ []
+
+
+Underfull \hbox (badness 6575) in paragraph at lines 670--670
+[]|\T1/ptm/m/n/10 This is in-voked when the mul-ti-cast clas-si-fier drops a
+ []
+
+
+Underfull \hbox (badness 5288) in paragraph at lines 670--670
+\T1/ptm/m/n/10 packet be-cause it ar-rived on the wrong in-ter-face, and
+ []
+
+
+Underfull \hbox (badness 7081) in paragraph at lines 670--670
+\T1/ptm/m/n/10 in-voked \T1/pcr/m/n/10 new-group\T1/ptm/m/n/10 {}. This rou-tin
+e is in-voked by
+ []
+
+[274] [275] [276]) [277]
+\openout2 = `dynamics.aux'.
+
+ (./dynamics.tex
+Chapter 32.
+[278
+
+
+
+] [279]
+Overfull \hbox (3.52374pt too wide) in paragraph at lines 225--233
+\T1/ptm/m/n/10 The next se-quence of con-fig-u-ra-tion steps are taken just pri
+or to the start of the sim-u-la-tor. \T1/ptm/m/it/10 ns \T1/ptm/m/n/10 in-vokes
+ \T1/pcr/m/n/10 rtmodel-configure\T1/ptm/m/n/10 {}
+ []
+
+[280] [281] [282] [283]) [284]
+\openout2 = `hier-rtg.aux'.
+
+ (./hier-rtg.tex
+Chapter 33.
+[285
+
+
+
+] [286]
+File: ./figures/hier-classifier.eps Graphic file (type eps)
+ <./figures/hier-classifier.eps> [287]) [288] [289
+
+
+]
+\openout2 = `udp.aux'.
+
+ (./udp.tex
+Chapter 34.
+[290
+
+
+]) [291]
+\openout2 = `tcp.aux'.
+
+ (./tcp.tex
+Chapter 35.
+[292
+
+
+
+] [293] [294] [295] [296] [297] [298] [299] [300]) [301]
+\openout2 = `sctp.aux'.
+
+ (./sctp.tex
+Chapter 36.
+[302
+
+
+
+]
+File: ./figures/sctp-multihomedNode.eps Graphic file (type eps)
+ <./figures/sctp-multihomedNode.eps> [303] [304] [305]
+
+LaTeX Warning: Citation `SCTP_CARO_2003e' on page 306 undefined on input line 3
+22.
+
+
+LaTeX Warning: Citation `SCTP_CARO_2003e' on page 306 undefined on input line 3
+45.
+
+[306]
+
+LaTeX Warning: Citation `SCTP_CARO_2003e' on page 307 undefined on input line 3
+56.
+
+[307] [308] [309] [310]) [311]
+\openout2 = `srm.aux'.
+
+ (./srm.tex
+Chapter 37.
+[312
+
+
+
+] [313] [314] [315] [316] [317]
+Overfull \hbox (4.41515pt too wide) in paragraph at lines 395--406
+[]\T1/ptm/m/n/10 The log-ging of re-quest and re-pair traces is done by \T1/pcr
+/m/n/10 SRM::evTrace\T1/ptm/m/n/10 {}. How-ever, the rou-tine \T1/pcr/m/n/10 SR
+M/Session::evTrace\T1/ptm/m/n/10 {},
+ []
+
+[318]
+Overfull \hbox (33.73381pt too wide) in paragraph at lines 480--488
+\T1/ptm/m/n/10 ever, the agent as-sumes that any ap-pli-ca-tion data is placed 
+in the data por-tion of the packet, pointed to by \T1/pcr/m/n/10 packet->access
+data()\T1/ptm/m/n/10 . 
+ []
+
+[319] [320]
+Overfull \hbox (2.8842pt too wide) in paragraph at lines 660--671
+\T1/ptm/m/n/10 fixes other schedul-ing pa-ram-e-ters: the back-off con-stant (\
+T1/pcr/m/n/10 backoff_\T1/ptm/m/n/10 ), the cur-rent num-ber of back-offs (\T1/
+pcr/m/n/10 backoffCtr_\T1/ptm/m/n/10 ),
+ []
+
+[321] [322]
+Overfull \hbox (8.04716pt too wide) in paragraph at lines 892--907
+\T1/ptm/m/n/10 The \T1/pcr/m/n/10 class Agent/SRM/Adaptive \T1/ptm/m/n/10 uses 
+\T1/pcr/m/n/10 class SRM/request/Adaptive \T1/ptm/m/n/10 and \T1/pcr/m/n/10 cla
+ss SRM/repair/Adaptive
+ []
+
+
+Overfull \hbox (51.5131pt too wide) in paragraph at lines 931--940
+ \T1/ptm/b/n/10 Send-ing a Mes-sage[] \T1/ptm/m/n/10 If a loss ob-ject sends a 
+re-quest in its first \T1/pcr/m/n/10 round_\T1/ptm/m/n/10 , then the agent, in 
+the in-stance pro-ce-dure \T1/pcr/m/n/10 sending-request\T1/ptm/m/n/10 {},
+ []
+
+
+Overfull \hbox (7.04312pt too wide) in paragraph at lines 941--950
+[]\T1/ptm/m/n/10 Similarly, a loss ob-ject that sends a re-pair in its first \T
+1/pcr/m/n/10 round_ \T1/ptm/m/n/10 will in-voke the agent's in-stance pro-ce-du
+re, \T1/pcr/m/n/10 sending-repair\T1/ptm/m/n/10 {},
+ []
+
+[323] [324] [325]) [326]
+\openout2 = `plm.aux'.
+
+ (./plm.tex
+Chapter 38.
+[327
+
+
+
+]
+Underfull \hbox (badness 1152) in paragraph at lines 72--76
+[]\T1/ptm/m/n/10 represents the ver-bose level of de-bug-ging out-put: from 0 n
+o out-put to 3 full out-put. For
+ []
+
+[328] [329]
+File: ./figures/instanPLMrecv.eps Graphic file (type eps)
+ <./figures/instanPLMrecv.eps> [330] [331] [332]) [333]
+\openout2 = `dccp.aux'.
+
+ (./dccp.tex
+Chapter 39.
+[334
+
+
+
+]) [335] [336
+
+
+]
+\openout2 = `applications.aux'.
+
+ (./applications.tex
+Chapter 40.
+File: ./figures/application.eps Graphic file (type eps)
+<./figures/application.eps> [337
+
+
+] [338]
+Overfull \hbox (13.18585pt too wide) in paragraph at lines 136--141
+[]\T1/pcr/m/n/10 sendmsg(int nbytes, const char* flags = 0)\T1/ptm/m/n/10 ---Id
+entical to \T1/pcr/m/n/10 send(int nbytes)\T1/ptm/m/n/10 , ex-cept that it pass
+es
+ []
+
+[339] [340] [341]
+Overfull \hbox (22.04388pt too wide) in paragraph at lines 332--342
+[]\T1/ptm/b/n/10 NOTE: \T1/ptm/m/n/10 The Ex-po-nen-tial On/Off gen-er-a-tor ca
+n be con-fig-ured to be-have as a \T1/ptm/b/n/10 Pois-son pro-cess \T1/ptm/m/n/
+10 by set-ting the vari-able \T1/pcr/m/n/10 burst_time_
+ []
+
+[342] [343] [344]
+Overfull \hbox (59.04251pt too wide) in paragraph at lines 523--531
+[]\T1/ptm/m/n/10 Application/Traffic/Trace ob-jects are used to gen-er-ate traf
+-fic from a trace file. \T1/pcr/m/n/10 $trace attach-tracefile
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--531
+
+ []
+
+[345]
+Overfull \hbox (4.33275pt too wide) in paragraph at lines 586--594
+\T1/ptm/m/n/10 tion/Traffic/Trace ob-jects de-scribed ear-lier in this sec-tion
+). \T1/pcr/m/n/10 $tracefile \T1/ptm/m/n/10 is an in-stance of the Trace-file O
+b-ject. \T1/pcr/m/n/10 $tracefile
+ []
+
+) [346]
+\openout2 = `webcache.aux'.
+
+ (./webcache.tex
+Chapter 41.
+File: ./figures/app-dataflow.eps Graphic file (type eps)
+<./figures/app-dataflow.eps> [347
+
+
+
+] [348] [349] [350]
+File: ./figures/appdata-hier.eps Graphic file (type eps)
+
+<./figures/appdata-hier.eps> [351] [352]
+Overfull \hbox (29.54924pt too wide) in paragraph at lines 445--448
+[]\T1/pcr/m/n/10 name(char *buf) \T1/ptm/m/n/10 - Print the page's name into th
+e given buffer. A page's name is in the for-mat of: $\OMS/cmsy/m/n/10 h$\T1/ptm
+/m/n/10 ServerName$\OMS/cmsy/m/n/10 i$\T1/ptm/m/n/10 :$\OMS/cmsy/m/n/10 h$\T1/p
+tm/m/n/10 PageID$\OMS/cmsy/m/n/10 i$\T1/ptm/m/n/10 . 
+ []
+
+[353]
+File: ./figures/pagepool-hier.eps Graphic file (type eps)
+ <./figures/pagepool-hier.eps> [354] [355] [356]
+Overfull \hbox (60.33748pt too wide) in paragraph at lines 681--681
+ []        \T1/pcr/m/n/10 WebTrafSession(WebTrafPool *mgr, Node *src, int np, i
+nt id) : rvInterPage_(NULL),[] 
+ []
+
+
+Overfull \hbox (36.33748pt too wide) in paragraph at lines 682--682
+ []        \T1/pcr/m/n/10 rvPageSize_(NULL), rvInterObj_(NULL), rvObjSize_(NULL
+), mgr_(mgr), src_(src),[] 
+ []
+
+
+Overfull \hbox (18.33748pt too wide) in paragraph at lines 718--718
+ []        \T1/pcr/m/n/10 inline void start() { // Call expire() and schedule t
+he next one if needed[] 
+ []
+
+
+Overfull \hbox (12.33748pt too wide) in paragraph at lines 726--726
+ []        \T1/pcr/m/n/10 virtual void handle(Event *e) { // schedule the timer
+ for the next object[] 
+ []
+
+[357] [358] [359]
+File: ./figures/cache-flowchart.eps Graphic file (type eps)
+ <./figures/cache-flowchart.eps> [360] [361] [362] [363]
+[364]) [365]
+\openout2 = `worm-model.aux'.
+
+ (./worm-model.tex
+Chapter 42.
+File: ./figures/dn-an.eps Graphic file (type eps)
+<./figures/dn-an.eps> [366
+
+
+
+] [367]
+Overfull \hbox (35.33745pt too wide) in paragraph at lines 135--135
+[]  \T1/pcr/m/n/10 $w v_percent 0.01          # the percentage of vulnerable ho
+sts in the abstract network[] 
+ []
+
+) [368]
+\openout2 = `packmime.aux'.
+
+ (./packmime.tex
+Chapter 43.
+File: ./figures/packmime.eps Graphic file (type eps)
+<./figures/packmime.eps> [369
+
+
+
+] [370]
+Overfull \hbox (5.28731pt too wide) in paragraph at lines 145--150
+[]\T1/pcr/m/n/10 $ns [new RandomVariable/PackMimeHTTPNumPages <probability> <sh
+ape> <scale>]\T1/ptm/m/n/10 , where
+ []
+
+
+Overfull \hbox (13.18733pt too wide) in paragraph at lines 150--153
+[]\T1/pcr/m/n/10 $ns [new RandomVariable/PackMimeHTTPSingleObjPages <probabilit
+y>]\T1/ptm/m/n/10 , where \T1/pcr/m/n/10 probability
+ []
+
+
+Overfull \hbox (19.42732pt too wide) in paragraph at lines 153--157
+[]\T1/pcr/m/n/10 $ns [new RandomVariable/PackMimeHTTPObjsPerPage <shape> <scale
+>]\T1/ptm/m/n/10 , where \T1/pcr/m/n/10 shape \T1/ptm/m/n/10 and \T1/pcr/m/n/10
+ scale
+ []
+
+
+Overfull \hbox (19.42732pt too wide) in paragraph at lines 159--162
+[]\T1/pcr/m/n/10 $ns [new RandomVariable/PackMimeHTTPServerDelay <shape> <scale
+>]\T1/ptm/m/n/10 , where \T1/pcr/m/n/10 shape \T1/ptm/m/n/10 and \T1/pcr/m/n/10
+ scale
+ []
+
+[371]
+File: ./figures/packmime-delaybox.eps Graphic file (type eps)
+ <./figures/packmime-delaybox.eps>
+Overfull \hbox (19.69319pt too wide) in paragraph at lines 201--206
+\T1/ptm/m/n/10 More ex-am-ples (in-clud-ing those that demon-strate the use of 
+De-lay-Box with Pack-Mime) are avail-able in the \T1/pcr/m/n/10 tcl/ex/packmime
+/
+ []
+
+[372] [373]
+Overfull \hbox (3.7548pt too wide) in paragraph at lines 331--338
+\T1/ptm/m/n/10 By de-fault, PackMime-HTTP uses an al-go-rithm (see \T1/pcr/m/n/
+10 PackMimeHTTPPersistRspSizeRandomVariable::value()
+ []
+
+[374] [375]) [376]
+\openout2 = `tmix.aux'.
+
+ (./tmix.tex
+Chapter 44.
+
+LaTeX Warning: Citation `weigle-ccr06' on page 377 undefined on input line 9.
+
+
+LaTeX Warning: Citation `weigle-ccr06' on page 377 undefined on input line 15.
+
+
+LaTeX Warning: Citation `weigle-ccr06' on page 377 undefined on input line 17.
+
+File: figures/tmix-fig.eps Graphic file (type eps)
+<figures/tmix-fig.eps> [377
+
+
+
+]
+
+LaTeX Warning: Citation `weigle-ccr06' on page 378 undefined on input line 94.
+
+[378] [379] [380] [381]
+Overfull \hbox (45.46474pt too wide) in paragraph at lines 361--364
+\T1/ptm/m/n/10 The fol-low-ing is an ex-am-ple of us-ing Tmix and Tmix_DelayBox
+. An-other ex-am-ple can be found at \T1/pcr/m/n/10 tcl/ex/tmix/test-tmix.tcl\T
+1/ptm/m/n/10 .
+ []
+
+[382] [383] [384] [385]) [386] [387
+
+
+]
+\openout2 = `session.aux'.
+
+ (./session.tex
+Chapter 45.
+[388
+
+
+]
+File: ./figures/regularTree.eps Graphic file (type eps)
+ <./figures/regularTree.eps>
+File: ./figures/sessionTree.eps Graphic file (type eps)
+ <./figures/sessionTree.eps> [389] [390]
+[391] [392]) [393]
+\openout2 = `asim.aux'.
+
+ (./asim.tex
+Chapter 46.
+File: ./figures/struct.eps Graphic file (type eps)
+<./figures/struct.eps> [394
+
+
+
+] [395] [396]) [397] [398
+
+
+]
+\openout2 = `emulation.aux'.
+
+ (./emulation.tex
+Chapter 47.
+[399
+
+
+] [400]
+Overfull \hbox (80.38358pt too wide) in paragraph at lines 162--176
+\T1/ptm/m/n/10 These ob-jects pro-vide an ex-tended in-ter-face to the LBNL pac
+ket cap-ture li-brary (libp-cap). (See \T1/pcr/m/n/10 ftp://ftp.ee.lbl.gov/libp
+cap.tar.Z
+ []
+
+[401] [402] [403]) [404] [405
+
+
+]
+\openout2 = `nam.aux'.
+
+ (./nam.tex
+Chapter 48.
+
+Overfull \hbox (5.33745pt too wide) in paragraph at lines 20--20
+[]    \T1/pcr/m/n/10 [ -k <intial socket port number> ] [ -N <application name>
+ ] [ -c <cache size> ][] 
+ []
+
+
+Overfull \hbox (1160.51964pt too wide) in paragraph at lines 28--42
+[][] 
+ []
+
+[406
+
+
+] [407] [408] [409]) [410]
+\openout2 = `namtrace.aux'.
+
+ (./namtrace.tex
+Chapter 49.
+[411
+
+
+
+]
+Overfull \hbox (12.33748pt too wide) in paragraph at lines 88--89
+[]\T1/pcr/m/n/10 A -t <time> -n <levels> -o <address-space size> -c <mcastshift
+> -a <mcastmask> -h
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+[412]
+Overfull \hbox (17.33745pt too wide) in paragraph at lines 127--132
+\T1/pcr/m/n/10 n -t <time> -a <src-addr> -s <src-id> -S <state> -v <shape> -c <
+color> -i <l-color> -o
+ []
+
+
+Overfull \hbox (11.33745pt too wide) in paragraph at lines 159--165
+\T1/pcr/m/n/10 l -t <time> -s <src> -d <dst> -S <state> -c <color> -o orientati
+on -r <bw> -D <delay> 
+ []
+
+[413]
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+[414] [415]
+Overfull \hbox (11.33745pt too wide) in paragraph at lines 303--315
+\T1/pcr/m/n/10 f -t <time> -s <src> -a <agentname> -T <type> -n <varname> -v <v
+alue> -o <prev value> 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+
+ []
+
+[416]
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
+
+ []
+
+[417] [418] [419] [420] (./nam_trace_format_table.tex [421] [422] [423]
+[424] [425]) [426] [427]
+Overfull \hbox (2.12503pt too wide) in paragraph at lines 725--732
+\T1/ptm/m/n/10 spaces, it must be quoted us-ing the dou-ble quote. An ex-am-ple
+ of this would be \T1/pcr/m/n/10 $ns at $time ''$ns trace-annotate
+ []
+
+) [428] [429
+
+
+]
+\openout2 = `educational.aux'.
+
+ (./educational.tex
+Chapter 50.
+[430
+
+
+]) [431] (./everything.bbl [432
+
+
+]
+Overfull \hbox (32.2841pt too wide) in paragraph at lines 183--186
+[]\T1/ptm/m/n/10 Xiaoliang (David) Wei.  A mini-tutorial for TCP-Linux in NS-2.
+  \T1/pcr/m/n/9 http://netlab.caltech.edu/projects/ns2tcplinux/\T1/ptm/m/n/10 .
+ 
+ []
+
+)
+No file everything.ind.
+[433] (./everything.aux (./basic.aux) (./undocumented.aux) (./otcl.aux)
+(./sim.aux) (./nodes.aux) (./links.aux) (./queue_mgmt.aux) (./delays.aux)
+(./diffserv.aux) (./agents.aux) (./timers.aux) (./events.aux)
+(./packet_format.aux) (./error_model.aux) (./lan.aux) (./address.aux)
+(./mobility.aux) (./satellite.aux) (./propagation.aux) (./energymodel.aux)
+(./diffusion.aux) (./xcp.aux) (./delaybox.aux) (./wpan.aux) (./debug.aux)
+(./math.aux) (./trace.aux) (./testsuite.aux) (./dynlib.aux) (./codestyle.aux)
+(./unicast.aux) (./multicast.aux) (./dynamics.aux) (./hier-rtg.aux) (./udp.aux)
+(./tcp.aux) (./sctp.aux) (./srm.aux) (./plm.aux) (./dccp.aux)
+(./applications.aux) (./webcache.aux) (./worm-model.aux) (./packmime.aux)
+(./tmix.aux) (./session.aux) (./asim.aux) (./emulation.aux) (./nam.aux)
+(./namtrace.aux) (./educational.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4271 strings out of 493849
+ 50941 string characters out of 1152846
+ 151796 words of memory out of 3000000
+ 7113 multiletter control sequences out of 15000+50000
+ 56436 words of font info for 60 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 37i,11n,39p,921b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on everything.dvi (434 pages, 1553584 bytes).

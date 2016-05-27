@@ -1,0 +1,89 @@
+\chapter{Energy Model in ns}
+\label{chap:enerymodel}
+
+Energy Model, as implemented in \emph{ns}, is a node attribute. The
+energy model represents level of energy in a mobile host. The energy
+model in a node has a initial value which is the level of energy the node
+has at the beginning of the simulation. This is known as
+{\tt initialEnergy\_}.
+It also has a given energy usage
+for every packet it transmits and receives. These are called
+{\tt txPower\_} and {\tt rxPower\_}.
+The files where the energy model is defined are ~ns/energymodel[.cc and.h].
+Other functions/methods described in this chapter may be found in
+~ns/wireless-phy.cc, ~ns/cmu-trace.cc, ~ns/tcl/lib[ns-lib.tcl, 
+ns-node.tcl, ns-mobilenode.tcl].
+
+
+\section{The C++ EnergyModel Class}
+\label{sec:c++energymodel}
+
+The basic energy model is very simple and is defined by class EnergyModel
+as shown below:
+
+\begin{verbatim}
+class EnergyModel : public TclObject {
+public:
+  EnergyModel(double energy) { energy\_ = energy; }
+  inline double energy() { return energy\_; }
+  inline void setenergy(double e) {energy\_ = e;}
+  virtual void DecrTxEnergy(double txtime, double P\_tx) {
+    energy\_ -= (P\_tx * txtime);
+  }
+  virtual void DecrRcvEnergy(double rcvtime, double P\_rcv) {
+    energy\_ -= (P\_rcv * rcvtime);
+  }
+protected:
+  double energy\_;
+};   
+\end{verbatim}
+
+As seen from the EnergyModel Class definition above, there is only a
+single class variable {\tt energy\_} which represents the
+level of energy in the node at any given time. The constructor
+EnergyModel(energy) requires the initial-energy to be passed along as a 
+parameter. The other class methods are
+used to decrease the energy level of the node for every packet transmitted
+( {\tt DecrTxEnergy(txtime, P\_tx)}) and every packet received (
+{\tt DecrRcvEnergy (rcvtime, P\_rcv)}) by
+the node. {\tt P\_tx} and {\tt P\_rcv} are the
+transmitting and
+receiving power (respectively) required by the node's interface or PHY.
+At the beginning of simulation, {\tt energy\_} is set to
+{\tt initialEnergy\_} which is then
+decremented for every transmission and reception of packets at the node.
+When the energy level at the node goes down to zero, no more packets can
+be received or transmitted by the node. If tracing is turned on, line
+{\tt DEBUG: node \<node-id\> dropping pkts due to energy = 0}
+is printed in the tracefile.
+
+
+\section{The OTcl interface}
+\label{sec:otclenergymodel}
+
+Since the energy model is a node attribute, it may be defined by the
+following node configuration APIs:
+\begin{verbatim}
+$ns_ node-config -energyModel $energymodel \
+                 -rxPower $p_rx \
+                 -txPower $p_tx \
+                 -initialEnergy $initialenergy
+\end{verbatim}
+Optional values for above configuration parameters of the energy
+model are given in the following table:
+\begin{table}[h]
+\begin{center}
+{\tt
+\begin{tabular}{|c||c|c|}\hline
+{\bf Attribute} & {\bf optional values} & {\bf default values}\\\hline
+\rm -energyModel& \rm "EnergyModel"&  \rm none\\\hline
+\rm -rxPower& \rm receiving power in watts (e.g 0.3)& \rm 281.8mW\\\hline
+\rm -txPower& \rm transmitting power in watts (e.g 0.4)& \rm 
+281.8mW\\\hline
+\rm -initialEnergy& \rm energy in joules (e.g 0.1)& \rm 0.0\\\hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\clearpage
+

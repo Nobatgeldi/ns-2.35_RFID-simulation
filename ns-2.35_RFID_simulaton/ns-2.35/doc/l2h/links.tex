@@ -1,0 +1,453 @@
+\chapter{Links: Simple Links}
+\label{chap:links}
+
+This is the second aspect of defining the topology.
+In \href{the previous chapter}{Chapter}{chap:nodes},
+we had described how to create the nodes in the topology in \emph{ns}.
+We now describe how to create the links to connect the nodes and complete
+the topology.
+In this chapter, we restrict ourselves to describing the simple
+point to point links.
+\emph{ns}\ supports a variety of other media, including
+an emulation of a multi-access LAN using a mesh of simple links,
+and other true simulation of wireless and broadcast media.
+They will be described in a separate chapter.
+The CBQlink is derived from simple links and is a considerably more
+complex form of link that is also not described in this chapter.
+
+We begin by describing the commands to create a link in this section.
+As with the node being composed of classifiers, 
+a simple link is built up from a sequence of connectors.
+We also briefly describe some of the connectors in a simple link.
+We then describe
+\href{the instance procedures that operate on the various components of
+defined by some of these connectors}{Section}{sec:links:components}.
+We conclude the chapter
+\href{with a description the connector object}{Section}{sec:links:connectors},
+including brief
+descriptions of the common link connectors.
+
+The \clsref{Link}{../ns-2/ns-link.tcl}
+is a standalone class in OTcl,
+that provides a few simple primitives.
+The \clsref{SimpleLink}{../ns-2/ns-link.tcl}
+provides the ability to connect two nodes with a point to point link.
+\emph{ns}\ provides the instance procedure
+\fcnref{\proc[]{simplex-link}}{../ns-2/ns-link.tcl}{Simulator::simplex-link}
+to form a unidirectional link from one node to another.
+The link is in the class SimpleLink.
+The following describes the syntax of the simplex link:
+\begin{verbatim}
+    set ns [new Simulator]
+    \$ns simplex-link \tup{node0} \tup{node1} \tup{bandwidth} \tup{delay} \tup{queue\_type}
+\end{verbatim}
+The command creates a link from {\tt \tup{node0}} to {\tt \tup{node1}},
+with specified {\tt \tup{bandwidth}} and {\tt \tup{delay}} characteristics.
+The link uses a queue of type {\tt \tup{queue\_type}}.
+The procedure also adds a TTL checker to the link.
+Five instance variables define the link:
+
+\centerline{\begin{tabular}{rp{4in}}
+	{\tt head\\_} &	Entry point to the link, it points
+			to the first object in the link. \\
+	{\tt queue\\_} & Reference to the main queue element of the link.
+			Simple links usually have one queue per link.
+			Other more complex types of links may have multiple
+			queue elements in the link. \\
+	{\tt link\\_} &	A reference to the element
+			that actually models the link,
+			in terms of the delay and bandwidth characteristics
+			of the link. \\
+	{\tt ttl\\_} &	Reference to the element that manipulates the
+			ttl in every packet. \\
+	{\tt drophead\\_} & Reference to an object that is the head of a
+			queue of elements that process link drops. \\
+	    \end{tabular}}
+
+In addition, if the simulator instance variable, 
+{\tt \$traceAllFile\_}, is defined, 
+the procedure will add trace elements that track when a packet is
+enqueued and dequeued from {\tt queue\_}.
+Furthermore, tracing interposes a drop trace element after the
+{\tt drophead\_}.
+\begin{figure}[tb]
+  \centerline{\includegraphics{link}}
+  \caption{Composite Construction of a Unidirectional Link}
+  \label{fig:link}
+\end{figure}
+The following instance variables track the trace elements:
+
+\centerline{\begin{tabular}{rp{4in}}
+	{\tt enqT\\_} &	Reference to the element that traces
+			packets entering {\tt queue\\_}.\\
+	{\tt deqT\\_} &	Reference to the element that traces
+			packets leaving {\tt queue\\_}.\\
+	{\tt drpT\\_} &	Reference to the element that traces
+			packets dropped from {\tt queue\\_}.\\
+	{\tt rcvT\\_} &	Reference to the element that traces
+			packets received by the next node.\\
+	    \end{tabular}}
+
+Note however, that if the user enable tracing multiple times on the link,
+these instance variables will only store a reference to the
+last elements inserted.
+
+Other configuration mechanisms that add components to a simple link
+are network interfaces (used in multicast routing), 
+link dynamics models, and tracing and monitors.
+We give 
+\href{a brief overview of the related objects at the end of this chapter}{%
+		Section}{sec:links:connectors},
+and discuss their functionality/implementation in other chapters.
+
+The instance procedure
+\fcnref{\proc[]{duplex-link}}{../ns-2/ns-link.tcl}{Simulator::duplex-link}
+constructs a bi-directional link from two simplex links.
+
+\section{Instance Procedures for Links and SimpleLinks}
+\label{sec:links:components}
+
+\paragraph{Link procedures}
+The \clsref{Link}{../ns-2/ns-link.tcl} is implemented entirely in Otcl.
+The OTcl {\tt SimpleLink} class uses the C++ {\tt LinkDelay} class
+to simulate packet delivery delays.
+The instance procedures in the class Link are:
+
+\begin{tabularx}{\linewidth}{rX}
+\fcnref{\proc[]{head}}{../ns-2/ns-link.tcl}{Link::head} &
+		returns the handle for {\tt head\\_}. \\
+\fcnref{\proc[]{queue}}{../ns-2/ns-link.tcl}{Link::queue} &
+		returns the handle for {\tt queue\\_}. \\
+\fcnref{\proc[]{link}}{../ns-2/ns-link.tcl}{Link::link} &
+		returns the handle for the delay element, {\tt link\\_}. \\
+\fcnref{\proc[]{up}}{../ns-2/ns-link.tcl}{Link::up} &
+		set link status to ``up'' in the {\tt dynamics\\_} element.
+		Also, writes out a trace line to each file specified through
+		the procedure \proc[]{trace-dynamics}.\\
+\fcnref{\proc[]{down}}{../ns-2/ns-link.tcl}{Link::down} &
+		As with \proc[]{up},
+		set link status to ``down'' in the {\tt dynamics\\_} element.
+		Also, writes out a trace line to each file specified through
+		the procedure \proc[]{trace-dynamics}.\\
+\fcnref{\proc[]{up?}}{../ns-2/ns-link.tcl}{Link::up?} &
+		returns status of the link.   Status is ``up'' or ``down'';
+		status is ``up'' if link dynamics is not enabled.\\
+\fcnref{\proc[]{all-connectors}}{../ns-2/ns-link.tcl}{Link::all-connectors} &
+		Apply specified operation to all connectors on the link.p
+		An example of such usage is {\tt link all-connectors reset}.\\
+\fcnref{\proc[]{cost}}{../ns-2/ns-link.tcl}{Link::cost} &
+		set link cost to value specified.\\
+\fcnref{\proc[]{cost?}}{../ns-2/ns-link.tcl}{Link::cost?} &
+		returns the cost of the link.  Default cost of link is 1, 
+		if no cost has been specified earlier.\\
+\end{tabularx}
+
+\paragraph{SimpleLink Procedures}
+The Otcl \clsref{SimpleLink}{../ns-2/ns-link.tcl}
+implements a simple point-to-point
+link with an associated queue and delay\footnote{The current
+version also includes an object to examine the
+network layer ``ttl'' field and discard packets if the
+field reaches zero.}.
+It is derived from the base Otcl class Link as follows:
+\begin{verbatim}
+        Class SimpleLink -superclass Link
+        SimpleLink instproc init { src dst bw delay q { lltype "DelayLink" } } {
+                \$self next \$src \$dst
+                \$self instvar link\_ queue\_ head\_ toNode\_ ttl\_
+                ...
+                set queue\_ \$q
+                set link\_ [new Delay/Link]
+                \$link\_ set bandwidth\_ \$bw
+                \$link\_ set delay\_ \$delay
+
+                \$queue\_ target \$link\_
+                \$link\_ target [\$toNode\_ entry]
+
+                ...
+                # XXX
+                # put the ttl checker after the delay
+                # so we don't have to worry about accounting
+                # for ttl-drops within the trace and/or monitor
+                # fabric
+                #
+                set ttl\_ [new TTLChecker]
+                \$ttl\_ target [\$link\_ target]
+                \$link\_ target \$ttl\_
+        }
+\end{verbatim}
+Notice that when a {\tt SimpleLink} object is created,
+new {\tt Delay/Link} and {\tt TTLChecker} objects are
+also created.
+Note also that,
+the {\tt Queue} object must have already been created.
+
+There are two additional methods implemented (in OTcl) as part
+of the {\tt SimpleLink} class: {\tt trace} and {\tt init-monitor}.
+These functions are described in further detail
+\href{in the section on tracing}{Chapter}{chap:trace}. 
+
+\section{Connectors}
+\label{sec:links:connectors}
+
+Connectors, unlink  classifiers, only generate data for one recipient;
+either the packet is delivered to the {\tt target\_} neighbor, or it
+is sent to he {\tt drop-target\_}.
+
+A connector will receive a packet, perform some function,
+and deliver the packet to its neighbor, or drop the packet.
+There are a number of different types of connectors in \emph{ns}.
+Each connector performs a different function.
+
+\begin{tabularx}{\linewidth}{rX}
+networkinterface & labels packets with incoming interface identifier---it 
+			is used by some multicast routing protocols.
+			The class variable ``Simulator NumberInterfaces\_ 1''
+			tells \emph{ns}\ to add these interfaces, and then, it is
+			added to either end of the simplex link.
+			\href{Multicast routing protocols are discussed in
+				a separate chapter}{Chapter}{chap:multicast}.\\
+DynaLink &	Object that gates traffic depending on whether the link 
+		is up or down.  It expects to be at the head of the link,
+		and is inserted on the link just prior to simulation start.
+		It's {\tt status\\_} variable control whether the link is
+		up or down.
+		\href{The description of how the DynaLink object is used
+		is in a separate chapter}{Chapter}{chap:net-dynamics}.\\
+DelayLink &	Object that models the link's
+		delay and bandwidth characteristics.
+		If the link is not dynamic, then this object simply
+		schedules receive events for the downstream object
+		for each packet it receives at the appropriate time
+		for that packet.  However, if the link is dynamic,
+		then it queues the packets internally, and schedules
+		one receives event for itself for the next packet that must
+		be delivered.
+		Thus, if the link goes down at some point, this object's
+	 \fcnref{\fcn[]{reset} method}{../ns-2/delay.cc}{DelayLink::reset}
+		is invoked, and the object will drop all packets in transit
+		at the instant of link failure.
+		We discuss the
+		\href{specifics of this class in another chapter}{Chapter}{%
+			chap:delays}.\\
+Queues &	model the output buffers attached
+		to a link in a ``real'' router in a network.
+		In \emph{ns}, they are attached to, and 
+		are considered as part of the link.
+		We discuss the
+		\href{details of queues and different types of queues in \emph{ns}
+			in another chapter}{Chapter}{chap:qmgmt}.\\
+TTLChecker &	will decrement the ttl in each packet that it receives.
+		If that ttl then has a positive value, the packet is forwarded
+		to the next element on the link.  In the simple links,
+		TTLCheckers are automatically added, and are placed
+		as the last element on the link, between the delay element,
+		and the entry for the next node.\\
+\end{tabularx}
+
+
+\section{Object hierarchy}
+\label{sec:linkobjects}
+
+The base class used to represent links is called Link. Methods for
+this class are listed in the next section. Other link objects derived from
+the base class are given as follows:
+
+\begin{itemize}
+
+\item SimpleLink Object
+A SimpleLink object is used to represent a simple unidirectional link.
+There are no state variables or configuration parameters associated with
+this object. Methods for this class are:
+{\tt \$simplelink enable-mcast \<src\> \<dst\>}\\
+This turns on multicast for the link by creating an incoming network
+interface for the destination and adds an outgoing interface for the
+source.
+
+{\tt \$simplelink trace \<ns\> \<file\> \<optional:op\>}\\
+Build trace objects for this link and update object linkage. If op is
+specified as "nam" create nam trace files.
+
+{\tt \$simplelink nam-trace \<ns\> \<file\>}\\
+Sets up nam tracing in the link.
+
+{\tt \$simplelink trace-dynamics \<ns\> \<file\> \<optional:op\>}\\
+This sets up tracing specially for dynamic links. <op> allows setting up
+of nam tracing as well.
+
+{\tt \$simplelink init-monitor \<ns\> \<qtrace\> \<sampleInterval\>}\\
+Insert objects that allow us to monitor the queue size of this link.
+Return the name of the object that can be queried to determine the average
+queue size.
+
+{\tt \$simplelink attach-monitors \<insnoop\> \<outsnoop\> \<dropsnoop\> \<qmon\>}\\
+This is similar to init-monitor, but allows for specification of more of
+the items.
+
+{\tt \$simplelink dynamic}\\
+Sets up the dynamic flag for this link.
+
+{\tt \$simplelink errormodule \<args\>}\\
+Inserts an error module before the queue.
+
+{\tt \$simpleilnk insert-linkloss \<args\>}\\
+Inserts the error module after the queue.
+
+//Other link objects derived from class SimpleLink are FQLink,
+CBQLink and IntServLink.
+
+Configuration parameters for FQLink are:
+\begin{description}
+\item[queueManagement\_] The type of queue management used in the link.
+                        Default value is DropTail.
+\end{description}
+
+No configuration parameters are specified for CBQLink and IntServLink
+objects.
+
+
+\item DelayLink Object
+The DelayLink Objects determine the amount of time required for a packet
+to traverse a link. This is defined to be size/bw + delay where size is
+the packet size, bw is the link bandwidth and delay is the link
+propagation delay. There are no methods or state variables associated with
+this object. 
+
+Configuration Parameters are:
+\begin{description}
+
+\item[bandwidth\_] Link bandwidth in bits per second. 
+
+\item[delay\_] Link propagation delay in seconds. 
+\end{description}
+\end{itemize}
+
+\section{Commands at a glance}
+\label{sec:linkscommand}
+
+Following is a list of common link commands used in simulation scripts:
+\begin{flushleft}
+
+{\tt \$ns\_ simplex-link \<node1\> \<node2\> \<bw\> \<delay\> \<qtype\> \<args\>}\\
+This command creates an unidirectional link between node1 and node2 with
+specified bandwidth (BW) and delay characteristics. The link uses a queue
+type of <qtype> and depending on the queue type different arguments are
+passed through <args>.
+
+
+{\tt \$ns\_ duplex-link \<node1\> \<node2\> \<bw\> \<delay\> \<qtype\> \<args\>}\\
+This creates a bi-directional link between node1 and node2. This procedure
+essentially creates a duplex-link from two simplex links, one from node1
+to node2 and the other from node2 to node1. The syntax for duplex-link is
+same as that of simplex-link described above.
+
+
+{\tt \$ns\_ duplex-intserv-link \<n1\> \<n2\> \<bw\> \<dly\> \<sched\> \<signal\> \<adc\> \<args\>}\\
+This creates a duplex-link between n1 and n2 with queue type of intserv, with
+specified BW and delay. This type of queue implements a scheduler with two
+level services priority. The type of intserv queue is given by <sched>, with
+admission control unit type of <adc> and signal module of type <signal>.
+
+
+{\tt \$ns\_ simplex-link-op \<n1\> \<n2\> \<op\> \<args\>}\\
+This is used to set attributes for a simplex link. The attributes may be
+the orientation, color, label, or queue-position.
+
+
+{\tt \$ns\_ duplex-link-op \<n1\> \<n2\> \<op\> \<args\>}\\
+This command is used to set link attributes (like orientation of the links,
+color, label, or queue-position) for duplex links.
+
+
+{\tt \$ns\_ link-lossmodel \<lossobj\> \<from\> \<to\>}\\
+This function generates losses (using the loss model <lossobj> inserted in
+the link between <from> node and <to> node) in the link that can be
+visualized by nam.
+
+
+{\tt \$ns\_ lossmodel \<lossobj\> \<from\> \<to\>}\\
+This is used to insert a loss module in regular links.
+
+
+
+Following is a list of internal link-related procedures:
+
+{\tt \$ns\_ register-nam-linkconfig \<link\>}\\
+This is an internal procedure used by {\tt "\$link orient"} to 
+register/update the order in which links should be created in nam.
+
+
+{\tt \$ns\_ remove-nam-linkconfig \<id1\> \<id2\>}\\
+This procedure is used to remove any duplicate links (duplicate links may be
+created by GT-ITM topology generator).
+
+
+{\tt \$link head}\\
+Returns the instance variable {\tt head\_} for the link. The {\tt head\_} is
+the entry pont to the link and it points to the first object in the link.
+
+
+{\tt \$link add-to-head \<connector\>}\\
+This allows the <connector> object to be now pointed by the {\tt head\_}
+element in the link, i.e, <connector> now becomes the first object in the
+link.
+
+
+{\tt \$link link}\\
+Returns the instance variable {\tt link\_}. The {\tt link\_} is the element
+in the link that actually models the link in terms of delay and bandwidth
+characteristics of the link.
+
+
+{\tt \$link queue}\\
+Returns the instance variable {\tt queue\_}. {\tt queue\_} is queue element
+in the link. There may be one or more queue elements in a particular link.
+
+
+{\tt \$link cost \<c\>}\\
+This sets a link cost of <c>.
+
+
+{\tt \$link cost?}\\
+Returns the cost value for the link. Default cost of link is set to 1.
+
+
+{\tt \$link if-label?}\\
+Returns the network interfaces associated with the link (for multicast routing).
+
+
+{\tt \$link up}\\
+This sets the link status to "up". This command is a part of network
+dynamics support in \emph{ns}.
+
+
+{\tt \$link down}\\
+Similar to up, this command marks the link status as "down".
+
+
+{\tt \$link up?}\\
+Returns the link status. The status is always "up" as default, if link
+dynamics is not enabled.
+
+
+{\tt \$link all-connectors op}\\ 
+This command applies the specified operation <op> to all connectors in the
+link.  Like, {\tt \$link all-connectors reset} or
+{\tt \$link all-connectors isDynamic}. 
+
+
+{\tt \$link install-error \<errmodel\>}\\
+This installs an error module after the {\tt link\_} element.
+
+
+In addition to the Link and link-related commands listed above, there are
+other procedures to support the specific requirements of different types of
+links derived from the base class "Link" like simple-link (SimpleLink),
+integrated service (IntServLink), class-based queue (CBQLink), fair queue
+(FQLink) and procedures to support multicast routing, sessionsim, nam etc.
+These and the above procedures may be found in \emph{ns}/tcl/lib(ns-lib.tcl,
+ns-link.tcl, ns-intserv.tcl, ns-namsupp.tcl, ns-queue.tcl),
+\emph{ns}/tcl/mcast/(McastMonitor.tcl, ns-mcast.tcl), 
+\emph{ns}/tcl/session/session.tcl.
+
+\end{flushleft}

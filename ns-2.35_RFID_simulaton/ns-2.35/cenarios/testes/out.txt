@@ -1,0 +1,2148 @@
+num_nodes is set 200
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 549.1
+COLLISION - (26) tags replied
+Qfp=2.300000 - Q=2
+New qValue=2
+COLLISION - (38) tags replied
+Qfp=2.600000 - Q=3
+New qValue=3
+COLLISION - (13) tags replied
+Qfp=2.900000 - Q=3
+New qValue=3
+COLLISION - (13) tags replied
+Qfp=3.200000 - Q=3
+New qValue=3
+COLLISION - (13) tags replied
+Qfp=3.500000 - Q=3
+New qValue=3
+COLLISION - (9) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+COLLISION - (11) tags replied
+Qfp=4.100000 - Q=4
+New qValue=4
+COLLISION - (7) tags replied
+Qfp=4.400000 - Q=4
+New qValue=4
+COLLISION - (6) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [63] identified
+COLLISION - (3) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [118] identified
+JUST ONE TAG REPLY!!
+Tag [108] identified
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [64] identified
+COLLISION - (4) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (4) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [3] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (5) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+COLLISION - (3) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+COLLISION - (2) tags replied
+Qfp=8.000000 - Q=8
+New qValue=8
+JUST ONE TAG REPLY!!
+Tag [195] identified
+JUST ONE TAG REPLY!!
+Tag [139] identified
+NO TAGS RESPONSES!!
+Qfp=7.700000 - Q=8
+New qValue=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (3) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+JUST ONE TAG REPLY!!
+Tag [114] identified
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [15] identified
+JUST ONE TAG REPLY!!
+Tag [69] identified
+COLLISION - (2) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [117] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [98] identified
+COLLISION - (2) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [196] identified
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [28] identified
+JUST ONE TAG REPLY!!
+Tag [152] identified
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [59] identified
+COLLISION - (4) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+JUST ONE TAG REPLY!!
+Tag [5] identified
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [45] identified
+COLLISION - (3) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (4) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+COLLISION - (3) tags replied
+Qfp=8.000000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.700000 - Q=8
+New qValue=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+JUST ONE TAG REPLY!!
+Tag [76] identified
+JUST ONE TAG REPLY!!
+Tag [153] identified
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [116] identified
+COLLISION - (5) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [177] identified
+COLLISION - (4) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [162] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [29] identified
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [128] identified
+JUST ONE TAG REPLY!!
+Tag [193] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [96] identified
+JUST ONE TAG REPLY!!
+Tag [171] identified
+JUST ONE TAG REPLY!!
+Tag [168] identified
+COLLISION - (3) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [140] identified
+COLLISION - (3) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [143] identified
+JUST ONE TAG REPLY!!
+Tag [34] identified
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (3) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [165] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [95] identified
+COLLISION - (3) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [89] identified
+COLLISION - (3) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [22] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [82] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [154] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (4) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [184] identified
+JUST ONE TAG REPLY!!
+Tag [13] identified
+JUST ONE TAG REPLY!!
+Tag [75] identified
+JUST ONE TAG REPLY!!
+Tag [8] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [52] identified
+COLLISION - (3) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [149] identified
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (3) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [157] identified
+COLLISION - (3) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (4) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [56] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (5) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [170] identified
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [38] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [88] identified
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [129] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [6] identified
+COLLISION - (3) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [83] identified
+JUST ONE TAG REPLY!!
+Tag [92] identified
+JUST ONE TAG REPLY!!
+Tag [90] identified
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [66] identified
+JUST ONE TAG REPLY!!
+Tag [33] identified
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+JUST ONE TAG REPLY!!
+Tag [70] identified
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (4) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+JUST ONE TAG REPLY!!
+Tag [180] identified
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [188] identified
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [68] identified
+COLLISION - (3) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [198] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [132] identified
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [7] identified
+COLLISION - (3) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [156] identified
+JUST ONE TAG REPLY!!
+Tag [133] identified
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (5) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [91] identified
+JUST ONE TAG REPLY!!
+Tag [163] identified
+COLLISION - (2) tags replied
+Qfp=7.700000 - Q=8
+New qValue=8
+JUST ONE TAG REPLY!!
+Tag [146] identified
+NO TAGS RESPONSES!!
+Qfp=7.400000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [119] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [176] identified
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+COLLISION - (3) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [32] identified
+JUST ONE TAG REPLY!!
+Tag [197] identified
+JUST ONE TAG REPLY!!
+Tag [167] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.400000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=7.100000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [53] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [93] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (4) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [26] identified
+JUST ONE TAG REPLY!!
+Tag [142] identified
+JUST ONE TAG REPLY!!
+Tag [49] identified
+JUST ONE TAG REPLY!!
+Tag [2] identified
+JUST ONE TAG REPLY!!
+Tag [14] identified
+JUST ONE TAG REPLY!!
+Tag [137] identified
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [130] identified
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [50] identified
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [40] identified
+COLLISION - (3) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [54] identified
+JUST ONE TAG REPLY!!
+Tag [194] identified
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [123] identified
+JUST ONE TAG REPLY!!
+Tag [112] identified
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [1] identified
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [99] identified
+COLLISION - (3) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [87] identified
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (4) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+COLLISION - (2) tags replied
+Qfp=7.100000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.800000 - Q=7
+New qValue=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [169] identified
+JUST ONE TAG REPLY!!
+Tag [47] identified
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [97] identified
+COLLISION - (4) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [150] identified
+JUST ONE TAG REPLY!!
+Tag [160] identified
+JUST ONE TAG REPLY!!
+Tag [51] identified
+JUST ONE TAG REPLY!!
+Tag [30] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [106] identified
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [111] identified
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [102] identified
+JUST ONE TAG REPLY!!
+Tag [11] identified
+JUST ONE TAG REPLY!!
+Tag [182] identified
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [151] identified
+JUST ONE TAG REPLY!!
+Tag [35] identified
+JUST ONE TAG REPLY!!
+Tag [190] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [57] identified
+JUST ONE TAG REPLY!!
+Tag [158] identified
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+JUST ONE TAG REPLY!!
+Tag [20] identified
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=6.500000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [174] identified
+COLLISION - (3) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.800000 - Q=7
+New qValue=7
+NO TAGS RESPONSES!!
+Qfp=6.500000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=6.200000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (6) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [19] identified
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (5) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (5) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [178] identified
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [61] identified
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [127] identified
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (3) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [122] identified
+JUST ONE TAG REPLY!!
+Tag [166] identified
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [189] identified
+JUST ONE TAG REPLY!!
+Tag [147] identified
+COLLISION - (4) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (6) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (5) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [94] identified
+JUST ONE TAG REPLY!!
+Tag [81] identified
+JUST ONE TAG REPLY!!
+Tag [131] identified
+JUST ONE TAG REPLY!!
+Tag [77] identified
+JUST ONE TAG REPLY!!
+Tag [42] identified
+COLLISION - (4) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [65] identified
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [78] identified
+JUST ONE TAG REPLY!!
+Tag [115] identified
+JUST ONE TAG REPLY!!
+Tag [74] identified
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [107] identified
+COLLISION - (3) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [101] identified
+COLLISION - (4) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [104] identified
+COLLISION - (5) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [134] identified
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [138] identified
+COLLISION - (6) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [125] identified
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [43] identified
+JUST ONE TAG REPLY!!
+Tag [159] identified
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [73] identified
+COLLISION - (4) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [41] identified
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [186] identified
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [17] identified
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [9] identified
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [145] identified
+COLLISION - (2) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [124] identified
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+COLLISION - (4) tags replied
+Qfp=5.900000 - Q=6
+New qValue=6
+COLLISION - (2) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [191] identified
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [4] identified
+COLLISION - (3) tags replied
+Qfp=6.200000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.900000 - Q=6
+New qValue=6
+New qValue=6
+JUST ONE TAG REPLY!!
+Tag [110] identified
+NO TAGS RESPONSES!!
+Qfp=5.600000 - Q=6
+New qValue=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [36] identified
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [164] identified
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [199] identified
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [58] identified
+JUST ONE TAG REPLY!!
+Tag [86] identified
+COLLISION - (3) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [161] identified
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [144] identified
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [155] identified
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.300000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [192] identified
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [181] identified
+COLLISION - (2) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.600000 - Q=6
+New qValue=6
+NO TAGS RESPONSES!!
+Qfp=5.300000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [24] identified
+NO TAGS RESPONSES!!
+Qfp=5.000000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (5) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (3) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [109] identified
+COLLISION - (3) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+COLLISION - (3) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [121] identified
+JUST ONE TAG REPLY!!
+Tag [44] identified
+JUST ONE TAG REPLY!!
+Tag [136] identified
+JUST ONE TAG REPLY!!
+Tag [120] identified
+JUST ONE TAG REPLY!!
+Tag [25] identified
+JUST ONE TAG REPLY!!
+Tag [10] identified
+COLLISION - (2) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [187] identified
+COLLISION - (2) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (3) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (3) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [179] identified
+COLLISION - (4) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (4) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [183] identified
+JUST ONE TAG REPLY!!
+Tag [12] identified
+COLLISION - (3) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [27] identified
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [135] identified
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [100] identified
+JUST ONE TAG REPLY!!
+Tag [39] identified
+JUST ONE TAG REPLY!!
+Tag [55] identified
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [185] identified
+COLLISION - (3) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=4.100000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.400000 - Q=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [72] identified
+JUST ONE TAG REPLY!!
+Tag [105] identified
+COLLISION - (3) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [71] identified
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [48] identified
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+COLLISION - (2) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [84] identified
+JUST ONE TAG REPLY!!
+Tag [23] identified
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (5) tags replied
+Qfp=4.700000 - Q=5
+New qValue=5
+COLLISION - (4) tags replied
+Qfp=5.000000 - Q=5
+New qValue=5
+JUST ONE TAG REPLY!!
+Tag [16] identified
+NO TAGS RESPONSES!!
+Qfp=4.700000 - Q=5
+New qValue=5
+New qValue=5
+NO TAGS RESPONSES!!
+Qfp=4.400000 - Q=4
+New qValue=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=4.100000 - Q=4
+New qValue=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.800000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [175] identified
+COLLISION - (3) tags replied
+Qfp=4.100000 - Q=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.800000 - Q=4
+New qValue=4
+New qValue=4
+COLLISION - (2) tags replied
+Qfp=4.100000 - Q=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.800000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [113] identified
+COLLISION - (3) tags replied
+Qfp=4.100000 - Q=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [103] identified
+NO TAGS RESPONSES!!
+Qfp=3.800000 - Q=4
+New qValue=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+COLLISION - (2) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+COLLISION - (3) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [31] identified
+NO TAGS RESPONSES!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+COLLISION - (2) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+NO TAGS RESPONSEend simulation
+S!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+NO TAGS RESPONSES!!
+Qfp=3.200000 - Q=3
+New qValue=3
+New qValue=3
+COLLISION - (3) tags replied
+Qfp=3.500000 - Q=3
+New qValue=3
+COLLISION - (2) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+COLLISION - (3) tags replied
+Qfp=4.100000 - Q=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.800000 - Q=4
+New qValue=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [173] identified
+COLLISION - (3) tags replied
+Qfp=4.100000 - Q=4
+New qValue=4
+JUST ONE TAG REPLY!!
+Tag [172] identified
+NO TAGS RESPONSES!!
+Qfp=3.800000 - Q=4
+New qValue=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+JUST ONE TAG REPLY!!
+Tag [67] identified
+JUST ONE TAG REPLY!!
+Tag [80] identified
+JUST ONE TAG REPLY!!
+Tag [37] identified
+COLLISION - (3) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+COLLISION - (2) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+JUST ONE TAG REPLY!!
+Tag [126] identified
+JUST ONE TAG REPLY!!
+Tag [21] identified
+JUST ONE TAG REPLY!!
+Tag [85] identified
+COLLISION - (3) tags replied
+Qfp=3.800000 - Q=4
+New qValue=4
+NO TAGS RESPONSES!!
+Qfp=3.500000 - Q=3
+New qValue=3
+New qValue=3
+NO TAGS RESPONSES!!
+Qfp=3.200000 - Q=3
+New qValue=3
+New qValue=3
+JUST ONE TAG REPLY!!
+Tag [46] identified
+COLLISION - (3) tags replied
+Qfp=3.500000 - Q=3
+New qValue=3
+NO TAGS RESPONSES!!
+Qfp=3.200000 - Q=3
+New qValue=3
+New qValue=3
+JUST ONE TAG REPLY!!
+Tag [148] identified
+JUST ONE TAG REPLY!!
+Tag [62] identified
+JUST ONE TAG REPLY!!
+Tag [79] identified
+NO TAGS RESPONSES!!
+Qfp=2.900000 - Q=3
+New qValue=3
+New qValue=3
+NO TAGS RESPONSES!!
+Qfp=2.600000 - Q=3
+New qValue=3
+New qValue=3
+COLLISION - (3) tags replied
+Qfp=2.900000 - Q=3
+New qValue=3
+NO TAGS RESPONSES!!
+Qfp=2.600000 - Q=3
+New qValue=3
+New qValue=3
+NO TAGS RESPONSES!!
+Qfp=2.300000 - Q=2
+New qValue=2
+New qValue=2
+COLLISION - (2) tags replied
+Qfp=2.600000 - Q=3
+New qValue=3
+NO TAGS RESPONSES!!
+Qfp=2.300000 - Q=2
+New qValue=2
+New qValue=2
+NO TAGS RESPONSES!!
+Qfp=2.000000 - Q=2
+New qValue=2
+New qValue=2
+JUST ONE TAG REPLY!!
+Tag [141] identified
+NO TAGS RESPONSES!!
+Qfp=1.700000 - Q=2
+New qValue=2
+New qValue=2
+NO TAGS RESPONSES!!
+Qfp=1.400000 - Q=1
+New qValue=1
+New qValue=1
+COLLISION - (2) tags replied
+Qfp=1.700000 - Q=2
+New qValue=2
+NO TAGS RESPONSES!!
+Qfp=1.400000 - Q=1
+New qValue=1
+New qValue=1
+COLLISION - (2) tags replied
+Qfp=1.700000 - Q=2
+New qValue=2
+NO TAGS RESPONSES!!
+Qfp=1.400000 - Q=1
+New qValue=1
+New qValue=1
+JUST ONE TAG REPLY!!
+Tag [60] identified
+JUST ONE TAG REPLY!!
+Tag [18] identified
+NO TAGS RESPONSES!!
+Qfp=1.100000 - Q=1
+New qValue=1
+New qValue=1
+NO TAGS RESPONSES!!
+Qfp=0.800000 - Q=1
+New qValue=1
+New qValue=1
+NO TAGS RESPONSES!!
+Qfp=0.500000 - Q=0
+New qValue=0
+New qValue=-1
+NO TAGS RESPONSES!!
+Qfp=0.200000 - Q=-1
+New qValue=-1
+Slots number: 697

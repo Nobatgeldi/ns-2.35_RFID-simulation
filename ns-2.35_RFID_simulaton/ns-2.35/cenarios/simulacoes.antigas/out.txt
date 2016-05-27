@@ -1,0 +1,1 @@
+r -t 0.165050009 -Zt 0 -Zi 32 -Zs 200 -Zd -1 -Zc 8 -Zq 3 -Zv 10 -Zz 165 Xc 0 Xi 0 Xs 0 -Ss 1

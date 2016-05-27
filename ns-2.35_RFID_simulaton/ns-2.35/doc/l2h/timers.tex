@@ -1,0 +1,267 @@
+\chapter{Timers}
+\label{chap:timers}
+
+Timers may be implemented in C++ or OTcl.  In C++, timers are based on an 
+abstract base class defined in \textasciitilde\emph{ns}/{timer-handler.h}.  They are most often 
+used in agents, but the 
+framework is general enough to be used by other objects.  The discussion
+below is oriented towards the use of timers in agents.
+
+The procedures and functions described in this chapter can be found in
+\textasciitilde\emph{ns}/{tcl/ex/timer.tcl}, and \textasciitilde\emph{ns}/{timer-handler.\{cc, h\}}.
+
+In OTcl, a simple timer class is defined in \textasciitilde\emph{ns}/{tcl/ex/timer.tcl}.  
+Subclasses can be derived to provide a simple mechanism for scheduling events 
+at the OTcl level.
+
+\section{C++ abstract base class TimerHandler}
+\label{sec:abstractbaseclass}
+
+The abstract base class {\tt TimerHandler}
+contains the following public member functions:
+
+\begin{tabularx}{\linewidth}{rX}
+  \fcn[double delay]{void sched} & schedule a timer to
+                                expire delay seconds in the future \\
+\fcn[double delay]{void resched} & reschedule a timer
+                (similar to \fcn[]{sched}, but timer may be pending) \\
+\fcn[]{void cancel} & cancel a pending timer \\
+\fcn[]{int status} & returns timer status
+                        (either TIMER\_IDLE, TIMER\_PENDING, or TIMER\_HANDLING) \\
+\end{tabularx}
+
+The abstract base class {\tt TimerHandler}
+contains the following protected members:
+
+\begin{tabularx}{\linewidth}{rlX}
+\fcn[Event* e]{virtual void expire} & {\tt =0} &
+         this method must be filled in by the timer client\\
+\fcn[Event* e]{virtual void handle} & {\tt } &
+         consumes an event; invokes {\it expire()} and sets {\it status\_} of the timer appropriately\\
+{\tt int status\\_} & &  keeps track of the current timer status\\
+{\tt Event event\\_} & & event to be consumed upon timer expiration\\
+\end{tabularx}
+
+The pure virtual function {\it expire()} must be defined by the timer classes deriving
+from this abstract base class.
+
+Finally, two private inline functions are defined:
+\begin{verbatim}
+        inline void \_sched(double delay) {
+            (void)Scheduler::instance().schedule(this, &event\_, delay);
+        }
+        inline void \_cancel() {
+            (void)Scheduler::instance().cancel(&event\_);
+        }
+\end{verbatim}
+
+From this code we can see that timers make use of methods of the 
+{\tt Scheduler} class.
+
+\subsection{Definition of a new timer}
+\label{sec:definition}
+
+To define a new timer, subclass this function and
+define \fcn[]{handle} if needed
+(\fcn[]{handle} is not always required):
+\begin{verbatim}
+        class MyTimer : public TimerHandler {
+        public:
+          MyTimer(MyAgentClass *a) : TimerHandler() { a\_ = a; }
+          virtual double expire(Event *e);
+        protected:
+          MyAgentClass *a\_;
+        };
+\end{verbatim}
+Then define expire:
+\begin{verbatim}
+        double
+        MyTimer::expire(Event *e)
+        {
+          // do the work
+          // return TIMER\_HANDLED;    // =\> do not reschedule timer
+          // return delay;            // =\> reschedule timer after delay
+        }
+\end{verbatim}
+Note that \fcn[]{expire} can return either the flag TIMER\_HANDLED or a
+delay value, depending on the requirements for this timer.
+
+Often {\tt MyTimer} will be a friend of {\tt MyAgentClass}, or 
+\fcn[]{expire} will only call a public function of {\tt MyAgentClass}.
+
+Timers are not directly accessible from the OTcl level, although users are
+free to establish method bindings if they so desire.
+
+\subsection{Example: Tcp retransmission timer}
+\label{sec:timerexample}
+
+TCP is an example of an agent which requires timers.  There are three timers
+defined in the basic Tahoe TCP agent defined in {\tt tcp.cc}:
+\begin{verbatim}
+        rtx\_timer\_;      /*  Retransmission timer /
+        delsnd\_timer\_;   /*  Delays sending of packets by a small random amount of time, /
+                        /* to avoid phase effects /
+        burstsnd\_timer\_;   /* Helps TCP to stagger the transmission of a large window /
+                                /* into several smaller bursts /
+\end{verbatim}
+In \textasciitilde\emph{ns}/{tcp.h}, three classes are derived from the base class
+\clsref{TimerHandler}{tcp.h}:
+\begin{verbatim}
+        class RtxTimer : public TimerHandler {
+        public:
+            RtxTimer(TcpAgent *a) : TimerHandler() { a\_ = a; }
+        protected:                   
+            virtual void expire(Event *e);
+            TcpAgent *a\_;
+        };  
+            
+        class DelSndTimer : public TimerHandler {
+        public:
+            DelSndTimer(TcpAgent *a) : TimerHandler() { a\_ = a; }
+        protected:
+            virtual void expire(Event *e);
+            TcpAgent *a\_;
+        };      
+    
+        class BurstSndTimer : public TimerHandler {
+        public: 
+            BurstSndTimer(TcpAgent *a) : TimerHandler() { a\_ = a; }
+        protected:
+            virtual void expire(Event *e); 
+            TcpAgent *a\_;
+        };  
+\end{verbatim}
+In
+\fcnref{the constructor for \code{TcpAgent}}{../ns-2/tcp.cc}{TcpAgent::TcpAgent}
+in {\tt tcp.cc},
+each of these timers
+is initialized with the {\tt this} pointer,
+which is assigned to the pointer {\tt a\_}.
+\begin{verbatim}
+        TcpAgent::TcpAgent() : Agent(PT\_TCP), rtt\_active\_(0), rtt\_seq\_(-1), 
+            \ldots
+            rtx\_timer\_(this), delsnd\_timer\_(this), burstsnd\_timer\_(this)
+        {
+            \ldots
+        }
+\end{verbatim}
+In the following, we will focus only on the retransmission timer.  Various
+helper methods may be defined to schedule timer events; \eg,
+\begin{verbatim}
+        /*
+         *Set retransmit timer using current rtt estimate.  By calling \fcn[]{resched}
+         *it does not matter whether the timer was already running.
+         */
+        void TcpAgent::set\_rtx\_timer()
+        {
+            rtx\_timer\_.resched(rtt\_timeout());
+        }
+
+        /*
+         * Set new retransmission timer if not all outstanding
+         * data has been acked.  Otherwise, if a timer is still
+         * outstanding, cancel it.
+         */
+        void TcpAgent::newtimer(Packet* pkt)
+        {
+            hdr\_tcp *tcph = (hdr\_tcp*)pkt-\>access(off\_tcp\_);
+            if (t\_seqno\_ \> tcph-\>seqno())
+                set\_rtx\_timer();
+            else if (rtx\_timer\_.status() == TIMER\_PENDING)
+                rtx\_timer\_.cancel();
+        }
+\end{verbatim}
+In the above code, the \fcn[]{set\_rtx\_timer} method reschedules the 
+retransmission timer by calling \fcn[]{rtx\_timer\_.resched}.  Note that if
+it is unclear whether or not the timer is already running, calling
+\fcn[]{resched} eliminates the need to explicitly cancel the timer.  In
+the second function, examples are given of the use of the \fcn[]{status}
+and \fcn{cancel} methods.
+
+Finally, the \fcn{expire} method for class {\tt RtxTimer} must be 
+defined.  In this case, \fcn{expire} calls the \fcn{timeout} method
+for {\tt TcpAgent}.  This is possible because \fcn[]{timeout} is a 
+public member function; if it were not, then {\tt RtxTimer} would have
+had to have been declared a friend class of {\tt TcpAgent}.
+\begin{verbatim}
+void TcpAgent::timeout(int tno)
+{                     
+    /* retransmit timer */
+    if (tno == TCP\_TIMER\_RTX) {
+        if (highest\_ack\_ == maxseq\_ && !slow\_start\_restart\_) {
+            /*
+             * TCP option:
+             * If no outstanding data, then don't do anything.
+             */
+            return;  
+        };
+        recover\_ = maxseq\_;
+        recover\_cause\_ = 2;
+        closecwnd(0);
+        reset\_rtx\_timer(0,1);
+        send\_much(0, TCP\_REASON\_TIMEOUT, maxburst\_); 
+    } else {
+        /* 
+         * delayed-send timer, with random overhead
+         * to avoid phase effects  
+         */     
+        send\_much(1, TCP\_REASON\_TIMEOUT, maxburst\_);
+    }           
+}           
+            
+void RtxTimer::expire(Event *e) {
+    a\_-\>timeout(TCP\_TIMER\_RTX);
+}
+\end{verbatim}
+
+The various TCP agents contain additional examples of timers.
+
+\section{OTcl Timer class}
+\label{sec:otcltimer}
+
+A simple timer class is defined in \textasciitilde\emph{ns}/{tcl/mcast/timer.tcl}.  Subclasses of
+{\tt Timer} can be defined as needed.  Unlike the C++ timer API, where a 
+\fcn[]{sched} aborts if the timer is already set, \fcn[]{sched} and
+\fcn[]{resched} are the same; i.e., no state is kept for the OTcl timers.
+The following methods are defined in the {\tt Timer} base class:
+\begin{verbatim}
+    \$self sched \$delay   # causes "\$self timeout" to be called \$delay seconds in the future;
+    \$self resched \$delay # same as "\$self sched \$delay" ;
+    \$self cancel         # cancels any pending scheduled callback;
+    \$self destroy        # same as "\$self cancel";
+    \$self expire         # calls "\$self timeout" immediately;
+\end{verbatim}
+
+\section{Commands at a glance}
+\label{sec:timercommand}
+
+Following is a list of methods for the class Timer. Note that many
+different types of timers have been derived from this base class (viz.
+LogTimer, Timer/Iface, Timer/Iface/Prune, CacheTimer, Timer/Scuba etc).
+\begin{flushleft}
+{\tt \$timer sched \<delay\>}\\
+This command cancels any other event that may have been scheduled and re-schedules
+another event after time <delay>.
+
+
+{\tt \$timer resched \<delay\>}\\
+Similar to "sched" described above. Added to have similar APIs as that of the
+C++ timers.
+
+
+{\tt \$timer cancel}\\
+This cancels any scheduled event.
+
+
+{\tt \$timer destroy}\\
+This is similar to cancel. Cancels any scheduled event.
+
+
+{\tt \$timer expire}\\
+This command calls for a time-out. However the time-out procedure needs to be
+defined in the sub-classes.
+
+
+All these procedures can be found in \emph{ns}/tcl/mcast/timer.tcl.
+\end{flushleft}
+\endinput

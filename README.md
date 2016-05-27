@@ -44,7 +44,7 @@ Features in this version include:
 All you need to do is type "./install" under this directory. The install
 script will compile and install the whole package for you. The script also
 will tell you the final installation result.
-
+to test first time http://nobatgeldi.wix.com/rfid-simulation
 
 4. More information
 --------------------

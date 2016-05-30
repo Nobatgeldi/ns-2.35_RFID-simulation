@@ -1,5 +1,7 @@
 BEGIN{
 i=0;
+b=0;
+k=0;
 }
 
 {
@@ -17,9 +19,16 @@ i=0;
 }
 
 END {
-   #for(j=1;j<=length(c1);j++){
+   #for(j=1; j in c1;j++){
    #	 printf("%d\n",c2[j]);
    #}
-printf("Number of identified tags: %d during %.9f seconds\n",length(c1),c3[length(c1)-1]);
-#printf("Descartados: %d\n",d);
+    for(a=1; a in c2;a++) 
+      {
+        b++;
+      }
+    for (j=1; j in c1; j++) 
+      {
+        k++;
+      }
+   printf("Number of identified tags: %d during %.9f seconds \n", j, c3[b-1]);
 }
